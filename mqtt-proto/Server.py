@@ -23,19 +23,12 @@ def on_message(client, userdata, msg):
         # sub: Push Notification Subscription
         # notification: Contains fields that appear on native push notification
     data = {
-    "sub": { 
-        # will be deprecated once subscription is saved per user, wil be replaced by user id, database will contain subscription credentials per user
-        "endpoint":"https://fcm.googleapis.com/fcm/send/eQ9wqbGpdmg:APA91bFa-H89zJ1cUgia2bCT0OYapPe5ijFwx7VdQ7otbSwzF424SpFhN6Z_Q1Ln4-z3DYLdlpN_4JMMhLZKjuWvY9NEuAYn3ZRXtKD8y21RdwmMiXPE7sdV_che_zF51h9I7Y9-ibMe",
-        "keys":{
-            "p256dh":"BPD2Vhe3hie9TYXmWgn-6ZOKKxMPm5jzyf9ZaWZg-m1QSCl4o5BgkGbh6fNQwSBxXIym06nuY2bNE7I-XQ3ZxoA",
-            "auth":"DHGiUoWCVet2ZMguqOYtsA"
-            }
-        },
+    "username": "bcsotty",
     "notification": {
         "title": "Fire Alarm Emergency", 
         "message": msg.payload.decode()
-    }
-}
+        }
+    }   
     # Post data to PWA hosted at URL
     response = requests.post(PWA_PUSH_URL, json = data)
     print(response.status_code)
