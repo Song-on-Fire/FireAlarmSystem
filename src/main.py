@@ -1,3 +1,5 @@
+# DEPRECATED as of 1-11-24 (Nico Bokhari)
+
 import asyncio
 import asyncio_mqtt
 import aiohttp
