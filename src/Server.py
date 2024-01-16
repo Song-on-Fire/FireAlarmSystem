@@ -3,7 +3,7 @@ import paho.mqtt.publish as publish #publish dependency
 import requests # to send API request to PWA
 
 # Constants
-FIRE_ALARM_ER_TOPIC = "/FireAlarm"
+FIRE_ALARM_ER_TOPIC = "FireAlarm/ER"
 PWA_PUSH_URL = "http://localhost:3000/notify"
 BROKER_HOST = "mqtt.eclipseprojects.io"
 
@@ -45,7 +45,7 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
 # Connect client to the Broker
-client.connect(BROKER_HOST, 1883, 60)
+client.connect("localhost", 1883, 60)
 # Run cliet forever
 while True:
     client.loop()

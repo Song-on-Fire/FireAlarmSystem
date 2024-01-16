@@ -6,7 +6,7 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish # publish dependency
 
 # Constants
-FIRE_ALARM_ER_TOPIC = "/FireAlarm"
+FIRE_ALARM_ER_TOPIC = "FireAlarm/ER"
 PWA_PUSH_URL = "http://localhost:3000/notify"
 BROKER_HOST = "mqtt.eclipseprojects.io"
     
@@ -28,7 +28,7 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect(BROKER_HOST, 1883, 60)
+client.connect("localhost", 1883, 60)
 
 while True: 
     client.loop()
