@@ -3,27 +3,36 @@ import paho.mqtt.publish as publish #publish dependency
 import requests # to send API request to PWA
 
 # Constants
-FIRE_ALARM_ER_TOPIC = "FireAlarm/ER"
+FIRE_ALARM_ER_TOPIC = "ER/bcsotty"
 PWA_PUSH_URL = "http://localhost:3000/notify"
-BROKER_HOST = "mqtt.eclipseprojects.io"
+BROKER_HOST = "localhost"
+# BROKER_HOST = "mqtt.eclipseprojects.io"
 
 # The callback for when the client receives a CONNACK response from the broker.
 def on_connect(client, userdata, flags, rc):
-    print("Connected to Fire Alarm. Result Code: "+str(rc))
+    print("Connected to Broker. Result Code: "+str(rc))
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     # subscribing to FireAlarm topic
     client.subscribe(FIRE_ALARM_ER_TOPIC)
+    print("Subscribed to topic: " + FIRE_ALARM_ER_TOPIC)
 
 # The callback for when a message is published to the broker, and the backendreceives it
 def on_message(client, userdata, msg):
+    payload = str(msg.payload)
+    topic = msg.topic
     # Print MQTT message to console
-    print(msg.payload.decode())
-    # Create Body for POST to PWA
+    print("From Topic: " + topic)
+    print("Received: " + payload)
+    usernameStart = (topic.rindex("/") + 1)
+    print(f"Index of username: {usernameStart}")
+    username = topic[usernameStart:]
+    print(username)
+    # Create Body for POST to PWA 
         # sub: Push Notification Subscription
         # notification: Contains fields that appear on native push notification
     data = {
-    "username": "bcsotty",
+    "username": username,
     "notification": {
         "title": "Fire Alarm Emergency", 
         "message": msg.payload.decode()
@@ -44,8 +53,11 @@ client = mqtt.Client()
 # Set Paho API functions to our defined functions
 client.on_connect = on_connect
 client.on_message = on_message
+# Set username and password 
+client.username_pw_set("nebokha", "password")
 # Connect client to the Broker
-client.connect("localhost", 1883, 60)
+client.connect("localhost", 1883)
+
 # Run cliet forever
 while True:
     client.loop()

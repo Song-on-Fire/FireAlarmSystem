@@ -6,9 +6,10 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish # publish dependency
 
 # Constants
-FIRE_ALARM_ER_TOPIC = "FireAlarm/ER"
+FIRE_ALARM_ER_TOPIC = "ER/bcsotty"
 PWA_PUSH_URL = "http://localhost:3000/notify"
-BROKER_HOST = "mqtt.eclipseprojects.io"
+BROKER_HOST = "localhost"
+# BROKER_HOST = "mqtt.eclipseprojects.io"
     
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
@@ -17,7 +18,7 @@ def on_connect(client, userdata, flags, rc):
     # reconnect then subscriptions will be renewed.
     MQTTMessage = "ALERT. THERE IS A FIRE. EVACUATE IMMEDIATELY"
     print(f"Sending: {MQTTMessage} to topic {FIRE_ALARM_ER_TOPIC}")
-    publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST)
+    publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, auth={'username':"bcsotty", 'password':"wrong"})
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
@@ -28,7 +29,10 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect("localhost", 1883, 60)
+# Set Username and Password
+client.username_pw_set("bcsotty", "wrong")
+# Connect to broker
+client.connect("localhost", 1883)
 
 while True: 
     client.loop()
