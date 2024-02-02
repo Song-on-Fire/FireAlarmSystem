@@ -1,1 +1,3 @@
 dev/
+broker/auth/passwords
+broker/logs/mosquitto.log

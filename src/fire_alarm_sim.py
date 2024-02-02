@@ -1,4 +1,3 @@
-# DEPRECATED as of 1-11-24 (Nico Bokhari)
 # Simulates the Smart Fire Alarm that sends an MQTT Message 
 # to the Backend when a Fire is detected
  
