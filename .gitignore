@@ -1,3 +1,5 @@
 dev/
 broker/auth/passwords
 broker/logs/mosquitto.log
+broker/storage/mosquitto.db
+src/__pycache__/blaze_client.cpython-310.pyc

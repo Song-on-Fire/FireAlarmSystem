@@ -52,10 +52,8 @@ def on_message(client, userdata, msg):
         print(str(response))
     else:
         print("An error occured with the response") 
-
-# Executed when script is ran
-
-def main():
+        
+def run_client():
 
     # create MQTT Client
     client = mqtt.Client()
@@ -72,4 +70,4 @@ def main():
         client.loop()
 
 if __name__ == "__main__":
-    main()
+    run_client()
