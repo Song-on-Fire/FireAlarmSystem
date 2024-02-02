@@ -1,13 +1,23 @@
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish #publish dependency
 import requests # to send API request to PWA
+import configparser
+
+# Define config parser
+config = configparser.ConfigParser()
+# config file path
+CONFIG_FILE_RELPATH = 'config/config.ini'
+# Read in config.ini
+config.read(CONFIG_FILE_RELPATH)
 
 # Constants
-FIRE_ALARM_ER_TOPIC = "ER/bcsotty"
-PWA_PUSH_URL = "http://localhost:3000/notify"
-BROKER_HOST = "localhost"
 CLIENT_USERNAME = "nebokha"
 CLIENT_PASSWORD = "password"
+FIRE_ALARM_USERNAME = "bcsotty"
+FIRE_ALARM_ER_TOPIC = config.get("TOPICS", "emergency_alarm") + "/" + FIRE_ALARM_USERNAME
+PWA_PUSH_URL = config.get("PWA", "push_url")
+HOST = config.get("PWA", "host")
+
 # BROKER_HOST = "mqtt.eclipseprojects.io"
 
 # The callback for when the client receives a CONNACK response from the broker.
@@ -52,7 +62,7 @@ def on_message(client, userdata, msg):
         print(str(response))
     else:
         print("An error occured with the response") 
-        
+
 def run_client():
 
     # create MQTT Client
@@ -63,7 +73,7 @@ def run_client():
     # Set username and password 
     client.username_pw_set(username=CLIENT_USERNAME, password=CLIENT_PASSWORD)
     # Connect client to the Broker
-    client.connect("localhost", 1883)
+    client.connect(HOST, 1883)
 
     # Run cliet forever
     while True:

@@ -4,9 +4,17 @@
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish # publish dependency
 import time # for testing
+import configparser
+
+# Define config parser
+config = configparser.ConfigParser()
+# config file path
+CONFIG_FILE_RELPATH = 'config/config.ini'
+# Read in config.ini
+config.read(CONFIG_FILE_RELPATH)
 
 # Constants
-FIRE_ALARM_ER_TOPIC = "ER/bcsotty"
+FIRE_ALARM_ER_TOPIC = "/ER/bcsotty"
 PWA_PUSH_URL = "http://localhost:3000/notify"
 BROKER_HOST = "localhost"
 CLIENT_USERNAME = "bcsotty"
