@@ -1,0 +1,522 @@
+1706914767: mosquitto version 2.0.11 starting
+1706914767: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706914767: Opening ipv4 listen socket on port 1883.
+1706914767: Opening ipv6 listen socket on port 1883.
+1706914767: mosquitto version 2.0.11 running
+1706914793: mosquitto version 2.0.11 terminating
+1706914793: Saving in-memory database to /home/devnico/repos/senior-design/FireAlarmSystem/broker/storage//mosquitto.db.
+1706914813: mosquitto version 2.0.11 starting
+1706914813: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706914813: Opening ipv4 listen socket on port 1883.
+1706914813: Opening ipv6 listen socket on port 1883.
+1706914813: mosquitto version 2.0.11 running
+1706914873: mosquitto version 2.0.11 terminating
+1706914873: Saving in-memory database to /home/devnico/repos/senior-design/FireAlarmSystem/broker/storage//mosquitto.db.
+1706914875: mosquitto version 2.0.11 starting
+1706914875: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706914875: Opening ipv4 listen socket on port 1883.
+1706914875: Opening ipv6 listen socket on port 1883.
+1706914875: mosquitto version 2.0.11 running
+1706914923: New connection from 127.0.0.1:51905 on port 1883.
+1706914923: New client connected from 127.0.0.1:51905 as auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 (p2, c1, k60, u'nebokha').
+1706914923: No will message specified.
+1706914923: Sending CONNACK to auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 (0, 0)
+1706914923: Received SUBSCRIBE from auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88
+1706914923: 	ER/bcsotty (QoS 0)
+1706914923: auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 0 ER/bcsotty
+1706914923: Sending SUBACK to auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88
+1706914932: New connection from 127.0.0.1:46953 on port 1883.
+1706914932: New client connected from 127.0.0.1:46953 as auto-A982F0F4-2B62-EA7F-1238-22AFE4B1EB45 (p2, c1, k60, u'bcsotty').
+1706914932: No will message specified.
+1706914932: Sending CONNACK to auto-A982F0F4-2B62-EA7F-1238-22AFE4B1EB45 (0, 0)
+1706914932: New connection from 127.0.0.1:39549 on port 1883.
+1706914932: New client connected from 127.0.0.1:39549 as auto-561DE414-F664-7A42-DEFE-1E2729E447F5 (p2, c1, k60, u'bcsotty').
+1706914932: No will message specified.
+1706914932: Sending CONNACK to auto-561DE414-F664-7A42-DEFE-1E2729E447F5 (0, 0)
+1706914932: Received PUBLISH from auto-561DE414-F664-7A42-DEFE-1E2729E447F5 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914932: Sending PUBLISH to auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914932: Received DISCONNECT from auto-561DE414-F664-7A42-DEFE-1E2729E447F5
+1706914932: Client auto-561DE414-F664-7A42-DEFE-1E2729E447F5 disconnected.
+1706914937: New connection from 127.0.0.1:59749 on port 1883.
+1706914937: New client connected from 127.0.0.1:59749 as auto-29031378-DCEF-D70E-F4BF-7FF2861239C9 (p2, c1, k60, u'bcsotty').
+1706914937: No will message specified.
+1706914937: Sending CONNACK to auto-29031378-DCEF-D70E-F4BF-7FF2861239C9 (0, 0)
+1706914937: Received PUBLISH from auto-29031378-DCEF-D70E-F4BF-7FF2861239C9 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914937: Sending PUBLISH to auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914937: Received DISCONNECT from auto-29031378-DCEF-D70E-F4BF-7FF2861239C9
+1706914937: Client auto-29031378-DCEF-D70E-F4BF-7FF2861239C9 disconnected.
+1706914943: New connection from 127.0.0.1:41375 on port 1883.
+1706914943: New client connected from 127.0.0.1:41375 as auto-497706C5-97E9-B314-628D-D688D183442B (p2, c1, k60, u'bcsotty').
+1706914943: No will message specified.
+1706914943: Sending CONNACK to auto-497706C5-97E9-B314-628D-D688D183442B (0, 0)
+1706914943: Received PUBLISH from auto-497706C5-97E9-B314-628D-D688D183442B (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914943: Sending PUBLISH to auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914943: Received DISCONNECT from auto-497706C5-97E9-B314-628D-D688D183442B
+1706914943: Client auto-497706C5-97E9-B314-628D-D688D183442B disconnected.
+1706914949: New connection from 127.0.0.1:58833 on port 1883.
+1706914949: New client connected from 127.0.0.1:58833 as auto-654AB8BF-BFBE-399A-B61B-2BAA39908177 (p2, c1, k60, u'bcsotty').
+1706914949: No will message specified.
+1706914949: Sending CONNACK to auto-654AB8BF-BFBE-399A-B61B-2BAA39908177 (0, 0)
+1706914949: Received PUBLISH from auto-654AB8BF-BFBE-399A-B61B-2BAA39908177 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914949: Sending PUBLISH to auto-4AA17074-6C71-CAFF-9D9B-B2CF933F9B88 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706914949: Received DISCONNECT from auto-654AB8BF-BFBE-399A-B61B-2BAA39908177
+1706914949: Client auto-654AB8BF-BFBE-399A-B61B-2BAA39908177 disconnected.
+1706914951: mosquitto version 2.0.11 terminating
+1706914951: Saving in-memory database to /home/devnico/repos/senior-design/FireAlarmSystem/broker/storage//mosquitto.db.
+1706915223: mosquitto version 2.0.11 starting
+1706915223: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706915223: Opening ipv4 listen socket on port 1883.
+1706915223: Opening ipv6 listen socket on port 1883.
+1706915223: mosquitto version 2.0.11 running
+1706915309: mosquitto version 2.0.11 starting
+1706915309: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706915309: Opening ipv4 listen socket on port 1883.
+1706915309: Error: Address already in use
+1706915316: New connection from 127.0.0.1:59439 on port 1883.
+1706915316: New client connected from 127.0.0.1:59439 as auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (p2, c1, k60, u'nebokha').
+1706915316: No will message specified.
+1706915316: Sending CONNACK to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (0, 0)
+1706915316: Received SUBSCRIBE from auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D
+1706915316: 	ER/bcsotty (QoS 0)
+1706915316: auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D 0 ER/bcsotty
+1706915316: Sending SUBACK to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D
+1706915318: New connection from 127.0.0.1:32849 on port 1883.
+1706915318: New client connected from 127.0.0.1:32849 as auto-12979C42-4AEA-4339-D6FF-00D85B92656D (p2, c1, k60, u'bcsotty').
+1706915318: No will message specified.
+1706915318: Sending CONNACK to auto-12979C42-4AEA-4339-D6FF-00D85B92656D (0, 0)
+1706915318: New connection from 127.0.0.1:38639 on port 1883.
+1706915318: New client connected from 127.0.0.1:38639 as auto-B133DE09-A82B-23CF-A843-B37CD3B3D226 (p2, c1, k60, u'bcsotty').
+1706915318: No will message specified.
+1706915318: Sending CONNACK to auto-B133DE09-A82B-23CF-A843-B37CD3B3D226 (0, 0)
+1706915318: Received PUBLISH from auto-B133DE09-A82B-23CF-A843-B37CD3B3D226 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915318: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915318: Received DISCONNECT from auto-B133DE09-A82B-23CF-A843-B37CD3B3D226
+1706915318: Client auto-B133DE09-A82B-23CF-A843-B37CD3B3D226 disconnected.
+1706915323: New connection from 127.0.0.1:57629 on port 1883.
+1706915323: New client connected from 127.0.0.1:57629 as auto-1BA0DE63-EE0F-4A4A-99B8-A62D5042104C (p2, c1, k60, u'bcsotty').
+1706915323: No will message specified.
+1706915323: Sending CONNACK to auto-1BA0DE63-EE0F-4A4A-99B8-A62D5042104C (0, 0)
+1706915323: Received PUBLISH from auto-1BA0DE63-EE0F-4A4A-99B8-A62D5042104C (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915323: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915323: Received DISCONNECT from auto-1BA0DE63-EE0F-4A4A-99B8-A62D5042104C
+1706915323: Client auto-1BA0DE63-EE0F-4A4A-99B8-A62D5042104C disconnected.
+1706915329: New connection from 127.0.0.1:40191 on port 1883.
+1706915329: New client connected from 127.0.0.1:40191 as auto-13EA4C0A-A64F-B54B-3686-DAE8D57CCD93 (p2, c1, k60, u'bcsotty').
+1706915329: No will message specified.
+1706915329: Sending CONNACK to auto-13EA4C0A-A64F-B54B-3686-DAE8D57CCD93 (0, 0)
+1706915329: Received PUBLISH from auto-13EA4C0A-A64F-B54B-3686-DAE8D57CCD93 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915329: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915329: Received DISCONNECT from auto-13EA4C0A-A64F-B54B-3686-DAE8D57CCD93
+1706915329: Client auto-13EA4C0A-A64F-B54B-3686-DAE8D57CCD93 disconnected.
+1706915335: New connection from 127.0.0.1:51831 on port 1883.
+1706915335: New client connected from 127.0.0.1:51831 as auto-1860DE3C-8157-C524-4896-7DF906E66137 (p2, c1, k60, u'bcsotty').
+1706915335: No will message specified.
+1706915335: Sending CONNACK to auto-1860DE3C-8157-C524-4896-7DF906E66137 (0, 0)
+1706915335: Received PUBLISH from auto-1860DE3C-8157-C524-4896-7DF906E66137 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915335: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915335: Received DISCONNECT from auto-1860DE3C-8157-C524-4896-7DF906E66137
+1706915335: Client auto-1860DE3C-8157-C524-4896-7DF906E66137 disconnected.
+1706915341: New connection from 127.0.0.1:36449 on port 1883.
+1706915341: New client connected from 127.0.0.1:36449 as auto-77092283-8E47-E02A-B258-1336E3CA8072 (p2, c1, k60, u'bcsotty').
+1706915341: No will message specified.
+1706915341: Sending CONNACK to auto-77092283-8E47-E02A-B258-1336E3CA8072 (0, 0)
+1706915341: Received PUBLISH from auto-77092283-8E47-E02A-B258-1336E3CA8072 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915341: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915341: Received DISCONNECT from auto-77092283-8E47-E02A-B258-1336E3CA8072
+1706915341: Client auto-77092283-8E47-E02A-B258-1336E3CA8072 disconnected.
+1706915347: New connection from 127.0.0.1:33161 on port 1883.
+1706915347: New client connected from 127.0.0.1:33161 as auto-D74A5692-1C90-D9DD-4C35-CA8C44528C8A (p2, c1, k60, u'bcsotty').
+1706915347: No will message specified.
+1706915347: Sending CONNACK to auto-D74A5692-1C90-D9DD-4C35-CA8C44528C8A (0, 0)
+1706915347: Received PUBLISH from auto-D74A5692-1C90-D9DD-4C35-CA8C44528C8A (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915347: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915347: Received DISCONNECT from auto-D74A5692-1C90-D9DD-4C35-CA8C44528C8A
+1706915347: Client auto-D74A5692-1C90-D9DD-4C35-CA8C44528C8A disconnected.
+1706915353: New connection from 127.0.0.1:45471 on port 1883.
+1706915353: New client connected from 127.0.0.1:45471 as auto-480ACA3C-4E72-E30A-1C58-36F6937C2987 (p2, c1, k60, u'bcsotty').
+1706915353: No will message specified.
+1706915353: Sending CONNACK to auto-480ACA3C-4E72-E30A-1C58-36F6937C2987 (0, 0)
+1706915353: Received PUBLISH from auto-480ACA3C-4E72-E30A-1C58-36F6937C2987 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915353: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915353: Received DISCONNECT from auto-480ACA3C-4E72-E30A-1C58-36F6937C2987
+1706915353: Client auto-480ACA3C-4E72-E30A-1C58-36F6937C2987 disconnected.
+1706915359: New connection from 127.0.0.1:49637 on port 1883.
+1706915359: New client connected from 127.0.0.1:49637 as auto-DF01B793-DFF0-02F1-3F29-2E8AC8A3FE00 (p2, c1, k60, u'bcsotty').
+1706915359: No will message specified.
+1706915359: Sending CONNACK to auto-DF01B793-DFF0-02F1-3F29-2E8AC8A3FE00 (0, 0)
+1706915359: Received PUBLISH from auto-DF01B793-DFF0-02F1-3F29-2E8AC8A3FE00 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915359: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915359: Received DISCONNECT from auto-DF01B793-DFF0-02F1-3F29-2E8AC8A3FE00
+1706915359: Client auto-DF01B793-DFF0-02F1-3F29-2E8AC8A3FE00 disconnected.
+1706915365: New connection from 127.0.0.1:35919 on port 1883.
+1706915365: New client connected from 127.0.0.1:35919 as auto-83AA754F-E4E5-93FC-ADDE-057C495B3350 (p2, c1, k60, u'bcsotty').
+1706915365: No will message specified.
+1706915365: Sending CONNACK to auto-83AA754F-E4E5-93FC-ADDE-057C495B3350 (0, 0)
+1706915365: Received PUBLISH from auto-83AA754F-E4E5-93FC-ADDE-057C495B3350 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915365: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915365: Received DISCONNECT from auto-83AA754F-E4E5-93FC-ADDE-057C495B3350
+1706915365: Client auto-83AA754F-E4E5-93FC-ADDE-057C495B3350 disconnected.
+1706915371: New connection from 127.0.0.1:44489 on port 1883.
+1706915371: New client connected from 127.0.0.1:44489 as auto-208D3854-437A-4BC2-DF0F-E362C470C548 (p2, c1, k60, u'bcsotty').
+1706915371: No will message specified.
+1706915371: Sending CONNACK to auto-208D3854-437A-4BC2-DF0F-E362C470C548 (0, 0)
+1706915371: Received PUBLISH from auto-208D3854-437A-4BC2-DF0F-E362C470C548 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915371: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915371: Received DISCONNECT from auto-208D3854-437A-4BC2-DF0F-E362C470C548
+1706915371: Client auto-208D3854-437A-4BC2-DF0F-E362C470C548 disconnected.
+1706915376: Received PINGREQ from auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D
+1706915376: Sending PINGRESP to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D
+1706915377: New connection from 127.0.0.1:38537 on port 1883.
+1706915377: New client connected from 127.0.0.1:38537 as auto-91667F75-9D32-4399-285B-D5C2C712E441 (p2, c1, k60, u'bcsotty').
+1706915377: No will message specified.
+1706915377: Sending CONNACK to auto-91667F75-9D32-4399-285B-D5C2C712E441 (0, 0)
+1706915377: Received PUBLISH from auto-91667F75-9D32-4399-285B-D5C2C712E441 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915377: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915377: Received DISCONNECT from auto-91667F75-9D32-4399-285B-D5C2C712E441
+1706915377: Client auto-91667F75-9D32-4399-285B-D5C2C712E441 disconnected.
+1706915378: Received PINGREQ from auto-12979C42-4AEA-4339-D6FF-00D85B92656D
+1706915378: Sending PINGRESP to auto-12979C42-4AEA-4339-D6FF-00D85B92656D
+1706915383: New connection from 127.0.0.1:47839 on port 1883.
+1706915383: New client connected from 127.0.0.1:47839 as auto-59CAB21D-3F48-0E63-522F-D53037D98123 (p2, c1, k60, u'bcsotty').
+1706915383: No will message specified.
+1706915383: Sending CONNACK to auto-59CAB21D-3F48-0E63-522F-D53037D98123 (0, 0)
+1706915383: Received PUBLISH from auto-59CAB21D-3F48-0E63-522F-D53037D98123 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915383: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915383: Received DISCONNECT from auto-59CAB21D-3F48-0E63-522F-D53037D98123
+1706915383: Client auto-59CAB21D-3F48-0E63-522F-D53037D98123 disconnected.
+1706915388: New connection from 127.0.0.1:40399 on port 1883.
+1706915388: New client connected from 127.0.0.1:40399 as auto-3DA599FC-FECD-7C1D-6ABE-B31021C76B8F (p2, c1, k60, u'bcsotty').
+1706915388: No will message specified.
+1706915388: Sending CONNACK to auto-3DA599FC-FECD-7C1D-6ABE-B31021C76B8F (0, 0)
+1706915388: Received PUBLISH from auto-3DA599FC-FECD-7C1D-6ABE-B31021C76B8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915388: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915388: Received DISCONNECT from auto-3DA599FC-FECD-7C1D-6ABE-B31021C76B8F
+1706915388: Client auto-3DA599FC-FECD-7C1D-6ABE-B31021C76B8F disconnected.
+1706915394: New connection from 127.0.0.1:37157 on port 1883.
+1706915394: New client connected from 127.0.0.1:37157 as auto-1E3E54B3-DA8F-4988-FF83-3C69DA00E1DC (p2, c1, k60, u'bcsotty').
+1706915394: No will message specified.
+1706915394: Sending CONNACK to auto-1E3E54B3-DA8F-4988-FF83-3C69DA00E1DC (0, 0)
+1706915394: Received PUBLISH from auto-1E3E54B3-DA8F-4988-FF83-3C69DA00E1DC (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915394: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915394: Received DISCONNECT from auto-1E3E54B3-DA8F-4988-FF83-3C69DA00E1DC
+1706915394: Client auto-1E3E54B3-DA8F-4988-FF83-3C69DA00E1DC disconnected.
+1706915400: New connection from 127.0.0.1:53653 on port 1883.
+1706915400: New client connected from 127.0.0.1:53653 as auto-8990090C-C0C8-6801-49DD-E69138A85CA9 (p2, c1, k60, u'bcsotty').
+1706915400: No will message specified.
+1706915400: Sending CONNACK to auto-8990090C-C0C8-6801-49DD-E69138A85CA9 (0, 0)
+1706915400: Received PUBLISH from auto-8990090C-C0C8-6801-49DD-E69138A85CA9 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915400: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915400: Received DISCONNECT from auto-8990090C-C0C8-6801-49DD-E69138A85CA9
+1706915400: Client auto-8990090C-C0C8-6801-49DD-E69138A85CA9 disconnected.
+1706915406: New connection from 127.0.0.1:40015 on port 1883.
+1706915406: New client connected from 127.0.0.1:40015 as auto-A88139C1-8771-C4C5-14BA-B3EEEFE9D6EF (p2, c1, k60, u'bcsotty').
+1706915406: No will message specified.
+1706915406: Sending CONNACK to auto-A88139C1-8771-C4C5-14BA-B3EEEFE9D6EF (0, 0)
+1706915406: Received PUBLISH from auto-A88139C1-8771-C4C5-14BA-B3EEEFE9D6EF (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915406: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915406: Received DISCONNECT from auto-A88139C1-8771-C4C5-14BA-B3EEEFE9D6EF
+1706915406: Client auto-A88139C1-8771-C4C5-14BA-B3EEEFE9D6EF disconnected.
+1706915412: New connection from 127.0.0.1:60195 on port 1883.
+1706915412: New client connected from 127.0.0.1:60195 as auto-A8918C4A-477B-5A56-D543-D63733A0EA34 (p2, c1, k60, u'bcsotty').
+1706915412: No will message specified.
+1706915412: Sending CONNACK to auto-A8918C4A-477B-5A56-D543-D63733A0EA34 (0, 0)
+1706915412: Received PUBLISH from auto-A8918C4A-477B-5A56-D543-D63733A0EA34 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915412: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915412: Received DISCONNECT from auto-A8918C4A-477B-5A56-D543-D63733A0EA34
+1706915412: Client auto-A8918C4A-477B-5A56-D543-D63733A0EA34 disconnected.
+1706915418: New connection from 127.0.0.1:59097 on port 1883.
+1706915418: New client connected from 127.0.0.1:59097 as auto-75733367-3F2F-721F-5DF5-ACBCE9A4ACC6 (p2, c1, k60, u'bcsotty').
+1706915418: No will message specified.
+1706915418: Sending CONNACK to auto-75733367-3F2F-721F-5DF5-ACBCE9A4ACC6 (0, 0)
+1706915418: Received PUBLISH from auto-75733367-3F2F-721F-5DF5-ACBCE9A4ACC6 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915418: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915418: Received DISCONNECT from auto-75733367-3F2F-721F-5DF5-ACBCE9A4ACC6
+1706915418: Client auto-75733367-3F2F-721F-5DF5-ACBCE9A4ACC6 disconnected.
+1706915424: New connection from 127.0.0.1:55149 on port 1883.
+1706915424: New client connected from 127.0.0.1:55149 as auto-0CC1926B-F84B-4886-20A0-F7A0F848D161 (p2, c1, k60, u'bcsotty').
+1706915424: No will message specified.
+1706915424: Sending CONNACK to auto-0CC1926B-F84B-4886-20A0-F7A0F848D161 (0, 0)
+1706915424: Received PUBLISH from auto-0CC1926B-F84B-4886-20A0-F7A0F848D161 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915424: Sending PUBLISH to auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915424: Received DISCONNECT from auto-0CC1926B-F84B-4886-20A0-F7A0F848D161
+1706915424: Client auto-0CC1926B-F84B-4886-20A0-F7A0F848D161 disconnected.
+1706915426: Client auto-4B1D7667-B24E-C511-6789-66DAA4A4B11D closed its connection.
+1706915427: Client auto-12979C42-4AEA-4339-D6FF-00D85B92656D closed its connection.
+1706915504: mosquitto version 2.0.11 starting
+1706915504: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706915504: Opening ipv4 listen socket on port 1883.
+1706915504: Error: Address already in use
+1706915517: New connection from 127.0.0.1:51265 on port 1883.
+1706915517: New client connected from 127.0.0.1:51265 as auto-9424C49E-3124-5491-6C50-7667839CFC8F (p2, c1, k60, u'nebokha').
+1706915517: No will message specified.
+1706915517: Sending CONNACK to auto-9424C49E-3124-5491-6C50-7667839CFC8F (0, 0)
+1706915517: Received SUBSCRIBE from auto-9424C49E-3124-5491-6C50-7667839CFC8F
+1706915517: 	ER/bcsotty (QoS 0)
+1706915517: auto-9424C49E-3124-5491-6C50-7667839CFC8F 0 ER/bcsotty
+1706915517: Sending SUBACK to auto-9424C49E-3124-5491-6C50-7667839CFC8F
+1706915525: New connection from 127.0.0.1:55565 on port 1883.
+1706915525: New client connected from 127.0.0.1:55565 as auto-57C41217-7F31-894F-A175-1502D5BBDAAB (p2, c1, k60, u'bcsotty').
+1706915525: No will message specified.
+1706915525: Sending CONNACK to auto-57C41217-7F31-894F-A175-1502D5BBDAAB (0, 0)
+1706915525: New connection from 127.0.0.1:37557 on port 1883.
+1706915525: New client connected from 127.0.0.1:37557 as auto-D2E85AF1-905E-C955-F73F-C7E978FA6359 (p2, c1, k60, u'bcsotty').
+1706915525: No will message specified.
+1706915525: Sending CONNACK to auto-D2E85AF1-905E-C955-F73F-C7E978FA6359 (0, 0)
+1706915525: Received PUBLISH from auto-D2E85AF1-905E-C955-F73F-C7E978FA6359 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915525: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915525: Received DISCONNECT from auto-D2E85AF1-905E-C955-F73F-C7E978FA6359
+1706915525: Client auto-D2E85AF1-905E-C955-F73F-C7E978FA6359 disconnected.
+1706915530: New connection from 127.0.0.1:39909 on port 1883.
+1706915530: New client connected from 127.0.0.1:39909 as auto-ACCF878D-7DAF-1C22-664E-D9F0C8CAEA32 (p2, c1, k60, u'bcsotty').
+1706915530: No will message specified.
+1706915530: Sending CONNACK to auto-ACCF878D-7DAF-1C22-664E-D9F0C8CAEA32 (0, 0)
+1706915530: Received PUBLISH from auto-ACCF878D-7DAF-1C22-664E-D9F0C8CAEA32 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915530: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915530: Received DISCONNECT from auto-ACCF878D-7DAF-1C22-664E-D9F0C8CAEA32
+1706915530: Client auto-ACCF878D-7DAF-1C22-664E-D9F0C8CAEA32 disconnected.
+1706915536: New connection from 127.0.0.1:35481 on port 1883.
+1706915536: New client connected from 127.0.0.1:35481 as auto-FDD77D37-12F6-4CBD-BD2D-CC679F457BB4 (p2, c1, k60, u'bcsotty').
+1706915536: No will message specified.
+1706915536: Sending CONNACK to auto-FDD77D37-12F6-4CBD-BD2D-CC679F457BB4 (0, 0)
+1706915536: Received PUBLISH from auto-FDD77D37-12F6-4CBD-BD2D-CC679F457BB4 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915536: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915536: Received DISCONNECT from auto-FDD77D37-12F6-4CBD-BD2D-CC679F457BB4
+1706915536: Client auto-FDD77D37-12F6-4CBD-BD2D-CC679F457BB4 disconnected.
+1706915542: New connection from 127.0.0.1:55677 on port 1883.
+1706915542: New client connected from 127.0.0.1:55677 as auto-3247A975-D807-7B9F-A4BC-7B764FCEFC29 (p2, c1, k60, u'bcsotty').
+1706915542: No will message specified.
+1706915542: Sending CONNACK to auto-3247A975-D807-7B9F-A4BC-7B764FCEFC29 (0, 0)
+1706915542: Received PUBLISH from auto-3247A975-D807-7B9F-A4BC-7B764FCEFC29 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915542: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915542: Received DISCONNECT from auto-3247A975-D807-7B9F-A4BC-7B764FCEFC29
+1706915542: Client auto-3247A975-D807-7B9F-A4BC-7B764FCEFC29 disconnected.
+1706915548: New connection from 127.0.0.1:37411 on port 1883.
+1706915548: New client connected from 127.0.0.1:37411 as auto-FFF0E08E-DA3C-4320-7DA9-19E67D977AD6 (p2, c1, k60, u'bcsotty').
+1706915548: No will message specified.
+1706915548: Sending CONNACK to auto-FFF0E08E-DA3C-4320-7DA9-19E67D977AD6 (0, 0)
+1706915548: Received PUBLISH from auto-FFF0E08E-DA3C-4320-7DA9-19E67D977AD6 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915548: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915548: Received DISCONNECT from auto-FFF0E08E-DA3C-4320-7DA9-19E67D977AD6
+1706915548: Client auto-FFF0E08E-DA3C-4320-7DA9-19E67D977AD6 disconnected.
+1706915554: New connection from 127.0.0.1:55181 on port 1883.
+1706915554: New client connected from 127.0.0.1:55181 as auto-7C28D83F-9CB2-CDD4-FA15-2BE025FC6389 (p2, c1, k60, u'bcsotty').
+1706915554: No will message specified.
+1706915554: Sending CONNACK to auto-7C28D83F-9CB2-CDD4-FA15-2BE025FC6389 (0, 0)
+1706915554: Received PUBLISH from auto-7C28D83F-9CB2-CDD4-FA15-2BE025FC6389 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915554: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915554: Received DISCONNECT from auto-7C28D83F-9CB2-CDD4-FA15-2BE025FC6389
+1706915554: Client auto-7C28D83F-9CB2-CDD4-FA15-2BE025FC6389 disconnected.
+1706915560: New connection from 127.0.0.1:37985 on port 1883.
+1706915560: New client connected from 127.0.0.1:37985 as auto-4FA3FDA4-493F-379A-5351-574F085804E2 (p2, c1, k60, u'bcsotty').
+1706915560: No will message specified.
+1706915560: Sending CONNACK to auto-4FA3FDA4-493F-379A-5351-574F085804E2 (0, 0)
+1706915560: Received PUBLISH from auto-4FA3FDA4-493F-379A-5351-574F085804E2 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915560: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915560: Received DISCONNECT from auto-4FA3FDA4-493F-379A-5351-574F085804E2
+1706915560: Client auto-4FA3FDA4-493F-379A-5351-574F085804E2 disconnected.
+1706915566: New connection from 127.0.0.1:56381 on port 1883.
+1706915566: New client connected from 127.0.0.1:56381 as auto-4E87F6C1-B044-0FD4-9061-9CFEC75AD2BC (p2, c1, k60, u'bcsotty').
+1706915566: No will message specified.
+1706915566: Sending CONNACK to auto-4E87F6C1-B044-0FD4-9061-9CFEC75AD2BC (0, 0)
+1706915566: Received PUBLISH from auto-4E87F6C1-B044-0FD4-9061-9CFEC75AD2BC (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915566: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915566: Received DISCONNECT from auto-4E87F6C1-B044-0FD4-9061-9CFEC75AD2BC
+1706915566: Client auto-4E87F6C1-B044-0FD4-9061-9CFEC75AD2BC disconnected.
+1706915572: New connection from 127.0.0.1:41991 on port 1883.
+1706915572: New client connected from 127.0.0.1:41991 as auto-397E9AB6-FD40-C2D0-44E0-F68FC1A3F45B (p2, c1, k60, u'bcsotty').
+1706915572: No will message specified.
+1706915572: Sending CONNACK to auto-397E9AB6-FD40-C2D0-44E0-F68FC1A3F45B (0, 0)
+1706915572: Received PUBLISH from auto-397E9AB6-FD40-C2D0-44E0-F68FC1A3F45B (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915572: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915572: Received DISCONNECT from auto-397E9AB6-FD40-C2D0-44E0-F68FC1A3F45B
+1706915572: Client auto-397E9AB6-FD40-C2D0-44E0-F68FC1A3F45B disconnected.
+1706915577: Received PINGREQ from auto-9424C49E-3124-5491-6C50-7667839CFC8F
+1706915577: Sending PINGRESP to auto-9424C49E-3124-5491-6C50-7667839CFC8F
+1706915578: New connection from 127.0.0.1:55313 on port 1883.
+1706915578: New client connected from 127.0.0.1:55313 as auto-13D5D379-CF74-9B41-A084-34623FEE68FC (p2, c1, k60, u'bcsotty').
+1706915578: No will message specified.
+1706915578: Sending CONNACK to auto-13D5D379-CF74-9B41-A084-34623FEE68FC (0, 0)
+1706915578: Received PUBLISH from auto-13D5D379-CF74-9B41-A084-34623FEE68FC (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915578: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915578: Received DISCONNECT from auto-13D5D379-CF74-9B41-A084-34623FEE68FC
+1706915578: Client auto-13D5D379-CF74-9B41-A084-34623FEE68FC disconnected.
+1706915584: New connection from 127.0.0.1:58349 on port 1883.
+1706915584: New client connected from 127.0.0.1:58349 as auto-9CDA1B54-1269-609E-268C-5F42E08F536B (p2, c1, k60, u'bcsotty').
+1706915584: No will message specified.
+1706915584: Sending CONNACK to auto-9CDA1B54-1269-609E-268C-5F42E08F536B (0, 0)
+1706915584: Received PUBLISH from auto-9CDA1B54-1269-609E-268C-5F42E08F536B (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915584: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915584: Received DISCONNECT from auto-9CDA1B54-1269-609E-268C-5F42E08F536B
+1706915584: Client auto-9CDA1B54-1269-609E-268C-5F42E08F536B disconnected.
+1706915585: Received PINGREQ from auto-57C41217-7F31-894F-A175-1502D5BBDAAB
+1706915585: Sending PINGRESP to auto-57C41217-7F31-894F-A175-1502D5BBDAAB
+1706915590: New connection from 127.0.0.1:59877 on port 1883.
+1706915590: New client connected from 127.0.0.1:59877 as auto-F5E850F5-B728-12B6-EF6E-C14630088AAE (p2, c1, k60, u'bcsotty').
+1706915590: No will message specified.
+1706915590: Sending CONNACK to auto-F5E850F5-B728-12B6-EF6E-C14630088AAE (0, 0)
+1706915590: Received PUBLISH from auto-F5E850F5-B728-12B6-EF6E-C14630088AAE (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915590: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915590: Received DISCONNECT from auto-F5E850F5-B728-12B6-EF6E-C14630088AAE
+1706915590: Client auto-F5E850F5-B728-12B6-EF6E-C14630088AAE disconnected.
+1706915595: New connection from 127.0.0.1:37371 on port 1883.
+1706915595: New client connected from 127.0.0.1:37371 as auto-89D6BAF6-9A29-33F0-716E-A9744E7C4E2E (p2, c1, k60, u'bcsotty').
+1706915595: No will message specified.
+1706915595: Sending CONNACK to auto-89D6BAF6-9A29-33F0-716E-A9744E7C4E2E (0, 0)
+1706915595: Received PUBLISH from auto-89D6BAF6-9A29-33F0-716E-A9744E7C4E2E (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915595: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915595: Received DISCONNECT from auto-89D6BAF6-9A29-33F0-716E-A9744E7C4E2E
+1706915595: Client auto-89D6BAF6-9A29-33F0-716E-A9744E7C4E2E disconnected.
+1706915601: New connection from 127.0.0.1:60679 on port 1883.
+1706915601: New client connected from 127.0.0.1:60679 as auto-82CD9383-5E0A-53C5-5177-C61A3DAA320D (p2, c1, k60, u'bcsotty').
+1706915601: No will message specified.
+1706915601: Sending CONNACK to auto-82CD9383-5E0A-53C5-5177-C61A3DAA320D (0, 0)
+1706915601: Received PUBLISH from auto-82CD9383-5E0A-53C5-5177-C61A3DAA320D (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915601: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915601: Received DISCONNECT from auto-82CD9383-5E0A-53C5-5177-C61A3DAA320D
+1706915601: Client auto-82CD9383-5E0A-53C5-5177-C61A3DAA320D disconnected.
+1706915607: New connection from 127.0.0.1:43585 on port 1883.
+1706915607: New client connected from 127.0.0.1:43585 as auto-0DB012DC-87A1-3DB0-CECD-DE04078CD6AA (p2, c1, k60, u'bcsotty').
+1706915607: No will message specified.
+1706915607: Sending CONNACK to auto-0DB012DC-87A1-3DB0-CECD-DE04078CD6AA (0, 0)
+1706915607: Received PUBLISH from auto-0DB012DC-87A1-3DB0-CECD-DE04078CD6AA (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915607: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915607: Received DISCONNECT from auto-0DB012DC-87A1-3DB0-CECD-DE04078CD6AA
+1706915607: Client auto-0DB012DC-87A1-3DB0-CECD-DE04078CD6AA disconnected.
+1706915613: New connection from 127.0.0.1:47219 on port 1883.
+1706915613: New client connected from 127.0.0.1:47219 as auto-1FFE6C74-C636-3F4B-E569-CCBEE392F31B (p2, c1, k60, u'bcsotty').
+1706915613: No will message specified.
+1706915613: Sending CONNACK to auto-1FFE6C74-C636-3F4B-E569-CCBEE392F31B (0, 0)
+1706915613: Received PUBLISH from auto-1FFE6C74-C636-3F4B-E569-CCBEE392F31B (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915613: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915613: Received DISCONNECT from auto-1FFE6C74-C636-3F4B-E569-CCBEE392F31B
+1706915613: Client auto-1FFE6C74-C636-3F4B-E569-CCBEE392F31B disconnected.
+1706915619: New connection from 127.0.0.1:44085 on port 1883.
+1706915619: New client connected from 127.0.0.1:44085 as auto-514A198D-FB60-AF39-07B9-C5ABB899DD09 (p2, c1, k60, u'bcsotty').
+1706915619: No will message specified.
+1706915619: Sending CONNACK to auto-514A198D-FB60-AF39-07B9-C5ABB899DD09 (0, 0)
+1706915619: Received PUBLISH from auto-514A198D-FB60-AF39-07B9-C5ABB899DD09 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915619: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915619: Received DISCONNECT from auto-514A198D-FB60-AF39-07B9-C5ABB899DD09
+1706915619: Client auto-514A198D-FB60-AF39-07B9-C5ABB899DD09 disconnected.
+1706915625: New connection from 127.0.0.1:41227 on port 1883.
+1706915625: New client connected from 127.0.0.1:41227 as auto-A680E2C8-7CF2-156B-FF85-C318E0A9D9AC (p2, c1, k60, u'bcsotty').
+1706915625: No will message specified.
+1706915625: Sending CONNACK to auto-A680E2C8-7CF2-156B-FF85-C318E0A9D9AC (0, 0)
+1706915625: Received PUBLISH from auto-A680E2C8-7CF2-156B-FF85-C318E0A9D9AC (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915625: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915625: Received DISCONNECT from auto-A680E2C8-7CF2-156B-FF85-C318E0A9D9AC
+1706915625: Client auto-A680E2C8-7CF2-156B-FF85-C318E0A9D9AC disconnected.
+1706915631: New connection from 127.0.0.1:49999 on port 1883.
+1706915631: New client connected from 127.0.0.1:49999 as auto-1427F5B7-DEC4-A3A9-8E21-8CD118000D86 (p2, c1, k60, u'bcsotty').
+1706915631: No will message specified.
+1706915631: Sending CONNACK to auto-1427F5B7-DEC4-A3A9-8E21-8CD118000D86 (0, 0)
+1706915631: Received PUBLISH from auto-1427F5B7-DEC4-A3A9-8E21-8CD118000D86 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915631: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915631: Received DISCONNECT from auto-1427F5B7-DEC4-A3A9-8E21-8CD118000D86
+1706915631: Client auto-1427F5B7-DEC4-A3A9-8E21-8CD118000D86 disconnected.
+1706915637: New connection from 127.0.0.1:56523 on port 1883.
+1706915637: New client connected from 127.0.0.1:56523 as auto-3AABF299-A0FC-A09B-7B9E-AA5A377EAB18 (p2, c1, k60, u'bcsotty').
+1706915637: No will message specified.
+1706915637: Sending CONNACK to auto-3AABF299-A0FC-A09B-7B9E-AA5A377EAB18 (0, 0)
+1706915637: Received PUBLISH from auto-3AABF299-A0FC-A09B-7B9E-AA5A377EAB18 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915637: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915637: Received DISCONNECT from auto-3AABF299-A0FC-A09B-7B9E-AA5A377EAB18
+1706915637: Client auto-3AABF299-A0FC-A09B-7B9E-AA5A377EAB18 disconnected.
+1706915638: Received PINGREQ from auto-9424C49E-3124-5491-6C50-7667839CFC8F
+1706915638: Sending PINGRESP to auto-9424C49E-3124-5491-6C50-7667839CFC8F
+1706915643: New connection from 127.0.0.1:52243 on port 1883.
+1706915643: New client connected from 127.0.0.1:52243 as auto-47A1591D-1FF5-2735-C80B-A885FDA3D001 (p2, c1, k60, u'bcsotty').
+1706915643: No will message specified.
+1706915643: Sending CONNACK to auto-47A1591D-1FF5-2735-C80B-A885FDA3D001 (0, 0)
+1706915643: Received PUBLISH from auto-47A1591D-1FF5-2735-C80B-A885FDA3D001 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915643: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915643: Received DISCONNECT from auto-47A1591D-1FF5-2735-C80B-A885FDA3D001
+1706915643: Client auto-47A1591D-1FF5-2735-C80B-A885FDA3D001 disconnected.
+1706915649: New connection from 127.0.0.1:35347 on port 1883.
+1706915649: New client connected from 127.0.0.1:35347 as auto-C8B15898-4BC3-A689-3AFC-C435B2B3CEE3 (p2, c1, k60, u'bcsotty').
+1706915649: No will message specified.
+1706915649: Sending CONNACK to auto-C8B15898-4BC3-A689-3AFC-C435B2B3CEE3 (0, 0)
+1706915649: Received PUBLISH from auto-C8B15898-4BC3-A689-3AFC-C435B2B3CEE3 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915649: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915649: Received DISCONNECT from auto-C8B15898-4BC3-A689-3AFC-C435B2B3CEE3
+1706915649: Client auto-C8B15898-4BC3-A689-3AFC-C435B2B3CEE3 disconnected.
+1706915650: Received PINGREQ from auto-57C41217-7F31-894F-A175-1502D5BBDAAB
+1706915650: Sending PINGRESP to auto-57C41217-7F31-894F-A175-1502D5BBDAAB
+1706915655: New connection from 127.0.0.1:42119 on port 1883.
+1706915655: New client connected from 127.0.0.1:42119 as auto-CCE1B16F-D155-EC3C-B5BA-F3D1C9480C6F (p2, c1, k60, u'bcsotty').
+1706915655: No will message specified.
+1706915655: Sending CONNACK to auto-CCE1B16F-D155-EC3C-B5BA-F3D1C9480C6F (0, 0)
+1706915655: Received PUBLISH from auto-CCE1B16F-D155-EC3C-B5BA-F3D1C9480C6F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915655: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915655: Received DISCONNECT from auto-CCE1B16F-D155-EC3C-B5BA-F3D1C9480C6F
+1706915655: Client auto-CCE1B16F-D155-EC3C-B5BA-F3D1C9480C6F disconnected.
+1706915660: New connection from 127.0.0.1:57487 on port 1883.
+1706915660: New client connected from 127.0.0.1:57487 as auto-ADA798EF-488B-553E-872C-4FE230C5CEB1 (p2, c1, k60, u'bcsotty').
+1706915660: No will message specified.
+1706915660: Sending CONNACK to auto-ADA798EF-488B-553E-872C-4FE230C5CEB1 (0, 0)
+1706915660: Received PUBLISH from auto-ADA798EF-488B-553E-872C-4FE230C5CEB1 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915660: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915660: Received DISCONNECT from auto-ADA798EF-488B-553E-872C-4FE230C5CEB1
+1706915660: Client auto-ADA798EF-488B-553E-872C-4FE230C5CEB1 disconnected.
+1706915666: New connection from 127.0.0.1:48953 on port 1883.
+1706915666: New client connected from 127.0.0.1:48953 as auto-076A57CF-3215-7D46-E661-BE53E6C82D88 (p2, c1, k60, u'bcsotty').
+1706915666: No will message specified.
+1706915666: Sending CONNACK to auto-076A57CF-3215-7D46-E661-BE53E6C82D88 (0, 0)
+1706915666: Received PUBLISH from auto-076A57CF-3215-7D46-E661-BE53E6C82D88 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915666: Sending PUBLISH to auto-9424C49E-3124-5491-6C50-7667839CFC8F (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706915666: Received DISCONNECT from auto-076A57CF-3215-7D46-E661-BE53E6C82D88
+1706915666: Client auto-076A57CF-3215-7D46-E661-BE53E6C82D88 disconnected.
+1706915671: Client auto-57C41217-7F31-894F-A175-1502D5BBDAAB closed its connection.
+1706915673: Client auto-9424C49E-3124-5491-6C50-7667839CFC8F closed its connection.
+1706916446: mosquitto version 2.0.11 starting
+1706916446: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1706916446: Opening ipv4 listen socket on port 1883.
+1706916446: Error: Address already in use
+1706916446: New connection from 127.0.0.1:45939 on port 1883.
+1706916446: New client connected from 127.0.0.1:45939 as auto-AC48604F-D391-1E48-BB25-128E5287E665 (p2, c1, k60, u'nebokha').
+1706916446: No will message specified.
+1706916446: Sending CONNACK to auto-AC48604F-D391-1E48-BB25-128E5287E665 (0, 0)
+1706916446: Received SUBSCRIBE from auto-AC48604F-D391-1E48-BB25-128E5287E665
+1706916446: 	ER/bcsotty (QoS 0)
+1706916446: auto-AC48604F-D391-1E48-BB25-128E5287E665 0 ER/bcsotty
+1706916446: Sending SUBACK to auto-AC48604F-D391-1E48-BB25-128E5287E665
+1706916453: New connection from 127.0.0.1:39835 on port 1883.
+1706916453: New client connected from 127.0.0.1:39835 as auto-D665AEBE-5A5E-8293-104A-AE01665994A6 (p2, c1, k60, u'bcsotty').
+1706916453: No will message specified.
+1706916453: Sending CONNACK to auto-D665AEBE-5A5E-8293-104A-AE01665994A6 (0, 0)
+1706916453: New connection from 127.0.0.1:52647 on port 1883.
+1706916453: New client connected from 127.0.0.1:52647 as auto-367F493D-0F13-F24A-A184-11361761AEC8 (p2, c1, k60, u'bcsotty').
+1706916453: No will message specified.
+1706916453: Sending CONNACK to auto-367F493D-0F13-F24A-A184-11361761AEC8 (0, 0)
+1706916453: Received PUBLISH from auto-367F493D-0F13-F24A-A184-11361761AEC8 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916453: Sending PUBLISH to auto-AC48604F-D391-1E48-BB25-128E5287E665 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916453: Received DISCONNECT from auto-367F493D-0F13-F24A-A184-11361761AEC8
+1706916453: Client auto-367F493D-0F13-F24A-A184-11361761AEC8 disconnected.
+1706916458: New connection from 127.0.0.1:49765 on port 1883.
+1706916458: New client connected from 127.0.0.1:49765 as auto-B4E4DA3D-868A-4552-40BC-98A342E39B53 (p2, c1, k60, u'bcsotty').
+1706916458: No will message specified.
+1706916458: Sending CONNACK to auto-B4E4DA3D-868A-4552-40BC-98A342E39B53 (0, 0)
+1706916458: Received PUBLISH from auto-B4E4DA3D-868A-4552-40BC-98A342E39B53 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916458: Sending PUBLISH to auto-AC48604F-D391-1E48-BB25-128E5287E665 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916458: Received DISCONNECT from auto-B4E4DA3D-868A-4552-40BC-98A342E39B53
+1706916458: Client auto-B4E4DA3D-868A-4552-40BC-98A342E39B53 disconnected.
+1706916464: New connection from 127.0.0.1:51979 on port 1883.
+1706916464: New client connected from 127.0.0.1:51979 as auto-4DEBA71E-6534-C896-8D24-B7E41A407BAA (p2, c1, k60, u'bcsotty').
+1706916464: No will message specified.
+1706916464: Sending CONNACK to auto-4DEBA71E-6534-C896-8D24-B7E41A407BAA (0, 0)
+1706916464: Received PUBLISH from auto-4DEBA71E-6534-C896-8D24-B7E41A407BAA (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916464: Sending PUBLISH to auto-AC48604F-D391-1E48-BB25-128E5287E665 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916464: Received DISCONNECT from auto-4DEBA71E-6534-C896-8D24-B7E41A407BAA
+1706916464: Client auto-4DEBA71E-6534-C896-8D24-B7E41A407BAA disconnected.
+1706916470: New connection from 127.0.0.1:58615 on port 1883.
+1706916470: New client connected from 127.0.0.1:58615 as auto-70192BF4-437D-5F25-99AC-4E0EEC88F3A5 (p2, c1, k60, u'bcsotty').
+1706916470: No will message specified.
+1706916470: Sending CONNACK to auto-70192BF4-437D-5F25-99AC-4E0EEC88F3A5 (0, 0)
+1706916470: Received PUBLISH from auto-70192BF4-437D-5F25-99AC-4E0EEC88F3A5 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916470: Sending PUBLISH to auto-AC48604F-D391-1E48-BB25-128E5287E665 (d0, q0, r0, m0, 'ER/bcsotty', ... (44 bytes))
+1706916470: Received DISCONNECT from auto-70192BF4-437D-5F25-99AC-4E0EEC88F3A5
+1706916470: Client auto-70192BF4-437D-5F25-99AC-4E0EEC88F3A5 disconnected.
+1706916471: Client auto-D665AEBE-5A5E-8293-104A-AE01665994A6 closed its connection.
+1706916506: Received PINGREQ from auto-AC48604F-D391-1E48-BB25-128E5287E665
+1706916506: Sending PINGRESP to auto-AC48604F-D391-1E48-BB25-128E5287E665
+1706916520: Client auto-AC48604F-D391-1E48-BB25-128E5287E665 closed its connection.
