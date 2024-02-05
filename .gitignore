@@ -4,3 +4,4 @@ broker/storage/mosquitto.db
 src/__pycache__/blaze_client.cpython-310.pyc
 broker/logs/blaze_mosquitto.log
 
+config/config.ini
