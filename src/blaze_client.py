@@ -2,6 +2,8 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish #publish dependency
 import requests # to send API request to PWA
 import configparser
+import mqtt_controller as m_cntr
+import pwa_controller as p_cntr
 
 # Define config parser
 config = configparser.ConfigParser()
@@ -20,6 +22,8 @@ HOST = config.get("PWA", "host")
 
 # BROKER_HOST = "mqtt.eclipseprojects.io"
 
+# TODO: Move message logging into mqtt-controller
+
 # The callback for when the client receives a CONNACK response from the broker.
 def on_connect(client, userdata, flags, rc):
 
@@ -31,23 +35,29 @@ def on_connect(client, userdata, flags, rc):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     # subscribing to FireAlarm topic
-    client.subscribe(FIRE_ALARM_ER_TOPIC)
-    print("Subscribed to topic: " + FIRE_ALARM_ER_TOPIC)
+
+    # TODO: create function to subscribe to necessary topics for the client
+    m_cntr.subscribeToERMessages(client)
 
 # The callback for when a message is published to the broker, and the backendreceives it
 def on_message(client, userdata, msg):
     payload = str(msg.payload)
     topic = msg.topic
+
+    # TODO: Logic that parses topic for which mqtt-controller handler to call
     # Print MQTT message to console
     print("From Topic: " + topic)
     print("Received: " + payload)
     usernameStart = (topic.rindex("/") + 1)
-    print(f"Index of username: {usernameStart}")
+    print(f"Index of username: {usernameStart}" )
     username = topic[usernameStart:]
     print(username)
+    # TODO: Post Request handled by pwa_controller, 
     # Create Body for POST to PWA 
         # sub: Push Notification Subscription
         # notification: Contains fields that appear on native push notification
+    
+    p_cntr.notifyActiveUser()
     data = {
     "username": username,
     "notification": {

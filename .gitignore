@@ -5,3 +5,6 @@ src/__pycache__/blaze_client.cpython-310.pyc
 broker/logs/blaze_mosquitto.log
 
 config/config.ini
+ToDo.md
+broker/mosquitto.pid
+broker/logs/mosquitto.log
