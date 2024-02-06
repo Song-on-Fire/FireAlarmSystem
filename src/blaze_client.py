@@ -3,7 +3,6 @@ import paho.mqtt.publish as publish #publish dependency
 import requests # to send API request to PWA
 import configparser
 import mqtt_controller as m_cntr
-import pwa_controller as p_cntr
 
 # Define config parser
 config = configparser.ConfigParser()
@@ -16,8 +15,9 @@ config.read(CONFIG_FILE_RELPATH)
 CLIENT_USERNAME = "nebokha"
 CLIENT_PASSWORD = "password"
 FIRE_ALARM_USERNAME = "bcsotty"
-FIRE_ALARM_ER_TOPIC = config.get("TOPICS", "emergency_alarm") + "/" + FIRE_ALARM_USERNAME
-PWA_PUSH_URL = config.get("PWA", "push_url")
+FIRE_ALARM_ER_PREFIX = config.get("TOPICS", "emergency_alarm")
+FIRE_ALARM_ER_TOPIC = FIRE_ALARM_ER_PREFIX + "/#"
+PWA_NOTIFY_URL = config.get("PWA", "notify_url")
 HOST = config.get("PWA", "host")
 
 # BROKER_HOST = "mqtt.eclipseprojects.io"
@@ -27,51 +27,22 @@ HOST = config.get("PWA", "host")
 # The callback for when the client receives a CONNACK response from the broker.
 def on_connect(client, userdata, flags, rc):
 
-    # print("Connected to Broker. Result Code: "+str(rc))
     if(rc == 5):
         print("Authentication Error on Broker")
         exit()
     print("Connected with result code "+str(rc))
-    # Subscribing in on_connect() means that if we lose the connection and
-    # reconnect then subscriptions will be renewed.
-    # subscribing to FireAlarm topic
 
     # TODO: create function to subscribe to necessary topics for the client
     m_cntr.subscribeToERMessages(client)
 
-# The callback for when a message is published to the broker, and the backendreceives it
+# Callback when controller receives a message from the broker
 def on_message(client, userdata, msg):
-    payload = str(msg.payload)
     topic = msg.topic
-
-    # TODO: Logic that parses topic for which mqtt-controller handler to call
-    # Print MQTT message to console
-    print("From Topic: " + topic)
-    print("Received: " + payload)
-    usernameStart = (topic.rindex("/") + 1)
-    print(f"Index of username: {usernameStart}" )
-    username = topic[usernameStart:]
-    print(username)
-    # TODO: Post Request handled by pwa_controller, 
-    # Create Body for POST to PWA 
-        # sub: Push Notification Subscription
-        # notification: Contains fields that appear on native push notification
+    if topic.startswith(FIRE_ALARM_ER_PREFIX): 
+        m_cntr.handleERMessage(client, msg)
     
-    p_cntr.notifyActiveUser()
-    data = {
-    "username": username,
-    "notification": {
-        "title": "Fire Alarm Emergency", 
-        "message": msg.payload.decode()
-        }
-    }   
-    # Post data to PWA hosted at URL
-    response = requests.post(PWA_PUSH_URL, json = data)
-    print(response.status_code)
-    if response:
-        print(str(response))
-    else:
-        print("An error occured with the response") 
+    # TODO: Logic that parses topic for which mqtt-controller handler to call
+   
 
 def run_client():
 

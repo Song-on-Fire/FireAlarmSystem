@@ -15,7 +15,6 @@ config.read(CONFIG_FILE_RELPATH)
 
 # Constants
 FIRE_ALARM_ER_TOPIC = "/ER/bcsotty"
-PWA_PUSH_URL = "http://localhost:3000/notify"
 BROKER_HOST = "localhost"
 CLIENT_USERNAME = "bcsotty"
 CLIENT_PASSWORD = "correct"
