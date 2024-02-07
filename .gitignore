@@ -8,3 +8,5 @@ config/config.ini
 ToDo.md
 broker/mosquitto.pid
 broker/logs/mosquitto.log
+src/__pycache__/mqtt_controller.cpython-310.pyc
+src/__pycache__/pwa_controller.cpython-310.pyc

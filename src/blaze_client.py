@@ -3,6 +3,7 @@ import paho.mqtt.publish as publish #publish dependency
 import requests # to send API request to PWA
 import configparser
 import mqtt_controller as m_cntr
+import pwa_controller as p_cntr
 
 # Define config parser
 config = configparser.ConfigParser()
@@ -32,17 +33,16 @@ def on_connect(client, userdata, flags, rc):
         exit()
     print("Connected with result code "+str(rc))
 
-    # TODO: create function to subscribe to necessary topics for the client
+    # subscribe controller client to all ER messages
     m_cntr.subscribeToERMessages(client)
+    # link test user and fire alarm in PWA db
+    p_cntr.addUserToAlarm()
 
 # Callback when controller receives a message from the broker
 def on_message(client, userdata, msg):
     topic = msg.topic
     if topic.startswith(FIRE_ALARM_ER_PREFIX): 
-        m_cntr.handleERMessage(client, msg)
-    
-    # TODO: Logic that parses topic for which mqtt-controller handler to call
-   
+        m_cntr.handleERMessage(client, msg)   
 
 def run_client():
 
