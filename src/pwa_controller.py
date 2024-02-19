@@ -41,7 +41,9 @@ def getActiveUserConfirmation(alarmID):
         activeUserConfirmation = result["confirmed"]
     else: 
         print("An error occured in confirming the fire status with the active user")
-    print(result)    
+    print(result) 
+    if activeUserConfirmation == 'null':
+        activeUserConfirmation = None
     return activeUserConfirmation
 
 def addUserToAlarm():

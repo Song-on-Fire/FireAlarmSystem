@@ -43,10 +43,11 @@ def handleERMessage(client, msg):
     if (activeUserConfirmation is None) or activeUserConfirmation:
         sendTrueAlarmMessage(username)
     elif not activeUserConfirmation:
-        sendFalseAlarmMessage(username)
+        sendFalseAlarmMessage(username, client)
     
-def sendFalseAlarmMessage(alarmID):
+def sendFalseAlarmMessage(alarmID, client):
     MQTTMessage = "0"
+    client.publish("/response/bcsotty", payload=MQTTMessage, qos=0)
     publish.single(FIRE_ALARM_RESPONSE_PREFIX + "/" + alarmID, MQTTMessage, hostname = HOST, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
 
 def sendTrueAlarmMessage(alarmID):
