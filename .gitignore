@@ -2,5 +2,9 @@ dev/
 broker/auth/passwords
 broker/storage/mosquitto.db
 src/__pycache__/blaze_client.cpython-310.pyc
-broker/logs/blaze_mosquitto.log
-
+*.log
+config/config.ini
+ToDo.md
+broker/mosquitto.pid
+src/__pycache__/mqtt_controller.cpython-310.pyc
+src/__pycache__/pwa_controller.cpython-310.pyc
