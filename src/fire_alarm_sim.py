@@ -14,10 +14,10 @@ CONFIG_FILE_RELPATH = '../config/config.ini'
 config.read(CONFIG_FILE_RELPATH)
 
 # Constants
-BROKER_HOST = "localhost"
+BROKER_HOST = "141.215.80.233"
 CLIENT_USERNAME = "bcsotty"
 CLIENT_PASSWORD = "correct"
-FIRE_ALARM_ER_PREFIX = config.get("TOPICS", "emergency_alarm")
+FIRE_ALARM_ER_PREFIX = config.get("TOPICS", "emergency_alarm") 
 FIRE_ALARM_RESPONSE_PREFIX = config.get("TOPICS", "controller_response")
 MQTTMessage = "ALERT."
 
@@ -44,7 +44,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload.decode()))
     time.sleep(5)
-    publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
+    publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, port = 1883, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
     # When a message is received, a response is published
     # publish_response(FIRE_ALARM_ER_TOPIC, "Hello again, from Simple-Client-Publish", "mqtt.eclipseprojects.io")
 
@@ -56,7 +56,7 @@ def main():
     # Set Username and Password
     client.username_pw_set(username=CLIENT_USERNAME, password=CLIENT_PASSWORD )
     # Connect to broker
-    client.connect("localhost", 1883)
+    client.connect(BROKER_HOST, 1883)
 
     while True: 
         client.loop()
