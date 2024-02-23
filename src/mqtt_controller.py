@@ -18,10 +18,14 @@ FIRE_ALARM_ER_TOPIC = FIRE_ALARM_ER_PREFIX + "/#"
 FIRE_ALARM_RESPONSE_PREFIX = config.get("TOPICS", "controller_response")
 HOST = config.get("PWA", "host")
 
-
 def subscribeToERMessages(client):
     client.subscribe(FIRE_ALARM_ER_TOPIC)
 
+def handleSetupMessage(client,msg):
+    pass
+
+def handleConfigMessage(client, msg):
+    pass
 
 def handleERMessage(client, msg):
     # extract topic and payload from message

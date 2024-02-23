@@ -14,7 +14,7 @@ CONFIG_FILE_RELPATH = '../config/config.ini'
 config.read(CONFIG_FILE_RELPATH)
 
 # Constants
-BROKER_HOST = "141.215.80.233"
+BROKER_HOST = "localhost"
 CLIENT_USERNAME = "bcsotty"
 CLIENT_PASSWORD = "correct"
 FIRE_ALARM_ER_PREFIX = config.get("TOPICS", "emergency_alarm") 
@@ -36,15 +36,16 @@ def on_connect(client, userdata, flags, rc):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     print(f"Sending: {MQTTMessage} to topic {FIRE_ALARM_ER_TOPIC}")
-    publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
-    client.subscribe(FIRE_ALARM_RESPONSE_TOPIC)
-    print(f"Subscribed to: {FIRE_ALARM_RESPONSE_TOPIC}")
+    client.publish("/blah", payload=MQTTMessage, qos=0)
+    # publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
+    # client.subscribe(FIRE_ALARM_RESPONSE_TOPIC)
+    # print(f"Subscribed to: {FIRE_ALARM_RESPONSE_TOPIC}")
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     print(msg.topic+" "+str(msg.payload.decode()))
     time.sleep(5)
-    publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, port = 1883, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
+    # publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, port = 1883, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
     # When a message is received, a response is published
     # publish_response(FIRE_ALARM_ER_TOPIC, "Hello again, from Simple-Client-Publish", "mqtt.eclipseprojects.io")
 

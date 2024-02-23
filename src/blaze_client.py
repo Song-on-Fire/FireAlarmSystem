@@ -17,6 +17,8 @@ CLIENT_USERNAME = "nebokha"
 CLIENT_PASSWORD = "password"
 FIRE_ALARM_USERNAME = "bcsotty"
 FIRE_ALARM_ER_PREFIX = config.get("TOPICS", "emergency_alarm")
+CONFIG_ALARM_TOPIC = config.get("TOPICS", "config_alarm")
+SETUP_ALARM_TOPIC = config.get("TOPICS", "setup_alarm")
 FIRE_ALARM_ER_TOPIC = FIRE_ALARM_ER_PREFIX + "/#"
 PWA_NOTIFY_URL = config.get("PWA", "notify_url")
 HOST = config.get("PWA", "host")
@@ -36,7 +38,7 @@ def on_connect(client, userdata, flags, rc):
     # subscribe controller client to all ER messages
     m_cntr.subscribeToERMessages(client)
     # link test user and fire alarm in PWA db
-    p_cntr.addUserToAlarm()
+    # p_cntr.addUserToAlarm()
 
 # Callback when controller receives a message from the broker
 def on_message(client, userdata, msg):

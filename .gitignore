@@ -8,3 +8,4 @@ ToDo.md
 broker/mosquitto.pid
 src/__pycache__/mqtt_controller.cpython-310.pyc
 src/__pycache__/pwa_controller.cpython-310.pyc
+broker/logs/blaze_mosquitto.log
