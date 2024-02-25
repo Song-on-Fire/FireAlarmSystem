@@ -17,12 +17,15 @@ config.read(CONFIG_FILE_RELPATH)
 BROKER_HOST = "localhost"
 CLIENT_USERNAME = "bcsotty"
 CLIENT_PASSWORD = "correct"
+SETUP_USERNAME = "default"
+SETUP_PASSWORD = "blaze"
 FIRE_ALARM_ER_PREFIX = config.get("TOPICS", "emergency_alarm") 
 FIRE_ALARM_RESPONSE_PREFIX = config.get("TOPICS", "controller_response")
 MQTTMessage = "ALERT."
 
 # Topics
-FIRE_ALARM_ER_TOPIC = FIRE_ALARM_ER_PREFIX + "/" + CLIENT_USERNAME
+# FIRE_ALARM_ER_TOPIC = FIRE_ALARM_ER_PREFIX + "/" + CLIENT_USERNAME
+FIRE_ALARM_ER_TOPIC = FIRE_ALARM_ER_PREFIX + "/" + "user01"
 FIRE_ALARM_RESPONSE_TOPIC = FIRE_ALARM_RESPONSE_PREFIX + "/" + CLIENT_USERNAME
 
 # BROKER_HOST = "mqtt.eclipseprojects.io"
@@ -36,7 +39,7 @@ def on_connect(client, userdata, flags, rc):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     print(f"Sending: {MQTTMessage} to topic {FIRE_ALARM_ER_TOPIC}")
-    client.publish("/blah", payload=MQTTMessage, qos=0)
+    client.publish(FIRE_ALARM_ER_TOPIC, payload=MQTTMessage, qos=0)
     # publish.single(FIRE_ALARM_ER_TOPIC, MQTTMessage, hostname = BROKER_HOST, auth={'username':CLIENT_USERNAME, 'password':CLIENT_PASSWORD})
     # client.subscribe(FIRE_ALARM_RESPONSE_TOPIC)
     # print(f"Subscribed to: {FIRE_ALARM_RESPONSE_TOPIC}")

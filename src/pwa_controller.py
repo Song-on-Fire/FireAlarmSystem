@@ -1,10 +1,11 @@
 import requests
+import constants as consts
 import configparser
 
 # Define config parser
 config = configparser.ConfigParser()
 # config file path
-CONFIG_FILE_RELPATH = 'config/config.ini'
+CONFIG_FILE_RELPATH = '../config/config.ini'
 # Read in config.ini
 config.read(CONFIG_FILE_RELPATH)
 
