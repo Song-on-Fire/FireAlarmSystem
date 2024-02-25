@@ -1,18 +1,7 @@
 import requests
 import constants as consts
-import configparser
-
-# Define config parser
-config = configparser.ConfigParser()
-# config file path
-CONFIG_FILE_RELPATH = '../config/config.ini'
-# Read in config.ini
-config.read(CONFIG_FILE_RELPATH)
-
-# CONSTANTS
-PWA_NOTIFY_URL = config.get("PWA", "notify_url")
-PWA_CONFIRM_URL = config.get("PWA", "confirm_url")
-PWA_ADD_ALARM_URL = config.get("PWA", "add_alarm_url")
+import random 
+import string
 
 def notifyActiveUser(alarmID, msgPayload):
     postData = {
@@ -22,7 +11,7 @@ def notifyActiveUser(alarmID, msgPayload):
         "message": msgPayload
         }
     }
-    response = requests.post(PWA_NOTIFY_URL, json = postData) # /notify
+    response = requests.post(consts.PWA_NOTIFY_URL, json = postData) # /notify
     print(response.status_code)
     if response.status_code == 200:
         print("Push Notification Sent Successfully")
@@ -35,7 +24,7 @@ def getActiveUserConfirmation(alarmID):
     parameters = {
         "alarmId": alarmID # 
     }
-    response = requests.get(PWA_CONFIRM_URL, params = parameters) # /confirm 
+    response = requests.get(consts.PWA_CONFIRM_URL, params = parameters) # /confirm 
     result = response.json()
     if response.status_code == 200: 
         print("Successfully received PWA response")
@@ -47,13 +36,23 @@ def getActiveUserConfirmation(alarmID):
         activeUserConfirmation = None
     return activeUserConfirmation
 
-def addUserToAlarm():
-    response = requests.post(PWA_ADD_ALARM_URL, json = {})
+def linkUserToAlarm():
+    response = requests.post(consts.PWA_ADD_ALARM_URL, json = {})
     if response.status_code == 200: 
         print("Alarm Linked Successfully")
     else: 
         print("An error occurred in linking")
-        print(str(response))
+    print(str(response))
+
+def addAlarmToDB():
+    print("adding alarm to the PWA database")
+    # Send API request to PWA, response should contain alarmSerial
+    
+    # simulating random alarmSerial ID
+
+    source = string.ascii_letters + string.digits
+    alarmSerial = ''.join((random.choice(source) for i in range(10)))
+    return alarmSerial
 
 def notifyPassiveUser(alarmID, msg):
     pass
