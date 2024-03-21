@@ -32,12 +32,14 @@ def disconnectSetup():
 def handleSetupMessage(client,msg):
     topic = msg.topic
     payload = msg.payload.decode()
-    payload = json.loads(payload)
     logMessage(topic, payload)
-    if payload['key'] != consts.ALARM_KEY:
-        disconnectSetup()
-    addUsernamePassword(payload['username'], payload['password'])
-    response = p_cntr.addAlarmToDB()
+
+    # if payload['key'] != consts.ALARM_KEY:
+    #     disconnectSetup()
+    # addUsernamePassword(payload['username'], payload['password'])
+    response = p_cntr.addAlarmToDB(alarmSerial=payload)
+    if(not response):
+        print("Error")
     print(response)
 
 
@@ -52,16 +54,16 @@ def handleERMessage(client, msg):
 
 
     # the fire alarm username/id is appended to the topic
-    username = topic[(topic.rindex("/") + 1): ]
+    alarmSerial = topic[(topic.rindex("/") + 1): ]
 
     # get confirmation from PWA, this will send the push notification 
-    activeUserConfirmation = p_cntr.getActiveUserConfirmation(alarmID = 1)
+    activeUserConfirmation = p_cntr.getActiveUserConfirmation(alarmID = alarmSerial)
     # alarmID will be stored in topics, username in topic will become deprecated feature
 
     if (activeUserConfirmation is None) or activeUserConfirmation:
         # if the active user does not respond, notify all alarms with the topic /response/<alarmSerial> 
         # payload = "1"
-        sendMessage(client, consts.CONTROLLER_RESPONSE_TOPIC + "/" + username, message = "1")
+        sendMessage(client, consts.CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
     elif not activeUserConfirmation: 
-        sendMessage(client, consts.CONTROLLER_RESPONSE_TOPIC + "/" + username, message = "0")
+        sendMessage(client, consts.CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "0")
 

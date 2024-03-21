@@ -2,3 +2,64 @@
 1707267283: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
 1707267283: Opening ipv4 listen socket on port 1883.
 1707267283: Error: Address already in use
+1711046855: mosquitto version 2.0.11 starting
+1711046855: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711046855: Opening ipv4 listen socket on port 1883.
+1711046855: Opening ipv6 listen socket on port 1883.
+1711046855: mosquitto version 2.0.11 running
+1711046866: mosquitto version 2.0.11 starting
+1711046866: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711046866: Opening ipv4 listen socket on port 1883.
+1711046866: Error: Address already in use
+1711046866: New connection from 127.0.0.1:51189 on port 1883.
+1711046866: Sending CONNACK to 127.0.0.1 (0, 5)
+1711046866: Client <unknown> disconnected, not authorised.
+1711046928: mosquitto version 2.0.11 starting
+1711046928: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711046928: Opening ipv4 listen socket on port 1883.
+1711046928: Error: Address already in use
+1711046928: New connection from 127.0.0.1:40551 on port 1883.
+1711046928: Sending CONNACK to 127.0.0.1 (0, 5)
+1711046928: Client <unknown> disconnected, not authorised.
+1711047098: mosquitto version 2.0.11 starting
+1711047098: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711047098: Opening ipv4 listen socket on port 1883.
+1711047098: Error: Address already in use
+1711047098: New connection from 127.0.0.1:33067 on port 1883.
+1711047098: Sending CONNACK to 127.0.0.1 (0, 5)
+1711047098: Client <unknown> disconnected, not authorised.
+1711047179: mosquitto version 2.0.11 starting
+1711047179: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711047179: Opening ipv4 listen socket on port 1883.
+1711047179: Error: Address already in use
+1711047179: New connection from 127.0.0.1:34311 on port 1883.
+1711047179: Sending CONNACK to 127.0.0.1 (0, 5)
+1711047179: Client <unknown> disconnected, not authorised.
+1711047305: mosquitto version 2.0.11 starting
+1711047305: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711047305: Opening ipv4 listen socket on port 1883.
+1711047305: Error: Address already in use
+1711047305: New connection from 127.0.0.1:36343 on port 1883.
+1711047305: Sending CONNACK to 127.0.0.1 (0, 5)
+1711047305: Client <unknown> disconnected, not authorised.
+1711047355: mosquitto version 2.0.11 starting
+1711047355: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_config.conf.
+1711047355: Opening ipv4 listen socket on port 1883.
+1711047355: Error: Address already in use
+1711047355: New connection from 127.0.0.1:37897 on port 1883.
+1711047355: New client connected from 127.0.0.1:37897 as user01 (p2, c1, k60, u'user01').
+1711047355: No will message specified.
+1711047355: Sending CONNACK to user01 (0, 0)
+1711047355: Received SUBSCRIBE from user01
+1711047355: 	/ER/# (QoS 0)
+1711047355: user01 0 /ER/#
+1711047355: Sending SUBACK to user01
+1711047355: Received SUBSCRIBE from user01
+1711047355: 	/config/# (QoS 0)
+1711047355: user01 0 /config/#
+1711047355: Sending SUBACK to user01
+1711047355: Received SUBSCRIBE from user01
+1711047355: 	/setup (QoS 0)
+1711047355: user01 0 /setup
+1711047355: Sending SUBACK to user01
+1711047410: Client user01 closed its connection.

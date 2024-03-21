@@ -44,15 +44,12 @@ def linkUserToAlarm():
         print("An error occurred in linking")
     print(str(response))
 
-def addAlarmToDB():
+def addAlarmToDB(alarmSerial):
     print("adding alarm to the PWA database")
-    # Send API request to PWA, response should contain alarmSerial
+    # Send API request to PWA to add a fire alarm to the DB with alarmSerial = alarmSerial
     
-    # simulating random alarmSerial ID
-
-    source = string.ascii_letters + string.digits
-    alarmSerial = ''.join((random.choice(source) for i in range(10)))
-    return alarmSerial
+    response = "{response}"
+    return response
 
 def notifyPassiveUser(alarmID, msg):
     pass

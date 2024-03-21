@@ -39,7 +39,12 @@ def run_client():
     client.on_connect = on_connect
     client.on_message = on_message
     # Set username and password 
-    client.username_pw_set(username=consts.CLIENT_USERNAME, password=consts.CLIENT_PASSWORD)
+    user = "user01"
+    passwd = "password"
+
+    print(user)
+    print(passwd)
+    client.username_pw_set(username=user, password=passwd)
     # Connect client to the Broker 
     client.connect(consts.HOST, 1883)
 

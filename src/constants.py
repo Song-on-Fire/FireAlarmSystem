@@ -2,7 +2,8 @@ import configparser
 # Define config parser
 config = configparser.ConfigParser()
 # config file path
-CONFIG_FILE_RELPATH = '../config/config.ini'
+CONFIG_FILE_RELPATH = '/home/devnico/repos/senior-design/FireAlarmSystem/config/config.ini'
+
 # Read in config.ini
 config.read(CONFIG_FILE_RELPATH)
 
