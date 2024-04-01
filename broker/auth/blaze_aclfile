@@ -1,0 +1,21 @@
+# General Section
+
+
+# User Specific 
+user default
+topic deny /ER/default
+topic deny /config/default
+topic deny /response/default
+topic /setup
+
+user admin
+topic /ER/#
+topic /config/#
+topic /response/#
+topic /setup
+
+# Client/User ID Section
+
+pattern write /ER/%c
+pattern write /config/%c
+pattern read /response/%c

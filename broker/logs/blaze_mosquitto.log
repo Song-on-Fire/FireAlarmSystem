@@ -63,3 +63,63 @@
 1711047355: user01 0 /setup
 1711047355: Sending SUBACK to user01
 1711047410: Client user01 closed its connection.
+1711048655: Saving in-memory database to /home/devnico/repos/senior-design/FireAlarmSystem/broker/storage//mosquitto.db.
+1711051133: Saving in-memory database to /home/devnico/repos/senior-design/FireAlarmSystem/broker/storage//mosquitto.db.
+1711051171: mosquitto version 2.0.11 terminating
+1711051171: Saving in-memory database to /home/devnico/repos/senior-design/FireAlarmSystem/broker/storage//mosquitto.db.
+1711938791: mosquitto version 2.0.11 starting
+1711938791: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711938791: Opening ipv4 listen socket on port 1883.
+1711938791: Error: Address already in use
+1711938820: mosquitto version 2.0.11 starting
+1711938820: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711938820: Opening ipv4 listen socket on port 1883.
+1711938820: Error: Address already in use
+1711938830: mosquitto version 2.0.11 starting
+1711938830: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711938830: Opening ipv4 listen socket on port 1883.
+1711938830: Error: Address already in use
+1711939009: mosquitto version 2.0.11 starting
+1711939009: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939009: Opening ipv4 listen socket on port 1883.
+1711939009: Error: Address already in use
+1711939085: mosquitto version 2.0.11 starting
+1711939085: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939085: Opening ipv4 listen socket on port 1883.
+1711939085: Error: Address already in use
+1711939161: mosquitto version 2.0.11 starting
+1711939161: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939161: Opening ipv4 listen socket on port 1883.
+1711939161: Error: Address already in use
+1711939210: mosquitto version 2.0.11 starting
+1711939210: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939210: Opening ipv4 listen socket on port 1883.
+1711939210: Error: Address already in use
+1711939297: mosquitto version 2.0.11 starting
+1711939297: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939297: Opening ipv4 listen socket on port 1883.
+1711939297: Error: Address already in use
+1711939348: mosquitto version 2.0.11 starting
+1711939348: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939348: Opening ipv4 listen socket on port 1883.
+1711939348: Error: Address already in use
+1711939379: mosquitto version 2.0.11 starting
+1711939379: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939379: Opening ipv4 listen socket on port 1883.
+1711939379: Error: Address already in use
+1711939584: mosquitto version 2.0.11 starting
+1711939584: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939584: Opening ipv4 listen socket on port 1883.
+1711939584: Error: Address already in use
+1711939825: mosquitto version 2.0.11 starting
+1711939825: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939825: Opening ipv4 listen socket on port 1883.
+1711939825: Error: Address already in use
+1711939963: mosquitto version 2.0.11 starting
+1711939963: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711939963: Opening ipv4 listen socket on port 1883.
+1711939963: Error: Address already in use
+1711940012: mosquitto version 2.0.11 starting
+1711940012: Config loaded from /home/devnico/repos/senior-design/FireAlarmSystem/broker/blaze_mosquitto_utils._config.conf.
+1711940012: Opening ipv4 listen socket on port 1883.
+1711940012: Error: Address already in use

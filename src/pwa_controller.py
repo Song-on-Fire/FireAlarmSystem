@@ -1,7 +1,9 @@
 import requests
-import constants as consts
+from constants import ConfigUtils
 import random 
 import string
+
+utils = ConfigUtils()
 
 def notifyActiveUser(alarmID, msgPayload):
     postData = {
@@ -11,7 +13,7 @@ def notifyActiveUser(alarmID, msgPayload):
         "message": msgPayload
         }
     }
-    response = requests.post(consts.PWA_NOTIFY_URL, json = postData) # /notify
+    response = requests.post(utils._PWA_NOTIFY_URL, json = postData) # /notify
     print(response.status_code)
     if response.status_code == 200:
         print("Push Notification Sent Successfully")
@@ -24,7 +26,7 @@ def getActiveUserConfirmation(alarmID):
     parameters = {
         "alarmId": alarmID # 
     }
-    response = requests.get(consts.PWA_CONFIRM_URL, params = parameters) # /confirm 
+    response = requests.get(utils._PWA_CONFIRM_URL, params = parameters) # /confirm 
     result = response.json()
     if response.status_code == 200: 
         print("Successfully received PWA response")
@@ -37,7 +39,7 @@ def getActiveUserConfirmation(alarmID):
     return activeUserConfirmation
 
 def linkUserToAlarm():
-    response = requests.post(consts.PWA_ADD_ALARM_URL, json = {})
+    response = requests.post(utils._PWA_ADD_ALARM_URL, json = {})
     if response.status_code == 200: 
         print("Alarm Linked Successfully")
     else: 
@@ -45,6 +47,7 @@ def linkUserToAlarm():
     print(str(response))
 
 def addAlarmToDB(alarmSerial):
+    # TODO: Add sqlite db adding alarm to DB
     print("adding alarm to the PWA database")
     # Send API request to PWA to add a fire alarm to the DB with alarmSerial = alarmSerial
     
