@@ -1,8 +1,6 @@
 import configparser
 import subprocess
-
-# TODO: Turn into singleton class with constants
-    # add password file 
+from datetime import datetime
 
 class ConfigUtils:
     _instance = None
@@ -37,9 +35,17 @@ class ConfigUtils:
         # Important Paths
         self._BROKER_PID_FILEPATH = self._config.get("MOSQUITTO", "pid_file")
         self._BROKER_PASSWD = self._config.get("MOSQUITTO", "password_file")
+        self._ROOT_DIR = self._config.get("PATHS", "root_dir")
+    
     def reloadConfigFile(self):
         try:
             subprocess.run(["kill","-SIGHUP", "$(cat ", self._BROKER_PID_FILEPATH, ")"], check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error with reloading mosquitto config file: {e}")
+        
+    def setMsgLogTime(self):
+        self._receive_msg = datetime.now()
+    
+    def setResponseLogTime(self):
+        self._receive_response = datetime.now()
 

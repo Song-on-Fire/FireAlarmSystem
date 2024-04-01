@@ -31,6 +31,7 @@ def getActiveUserConfirmation(alarmID):
     if response.status_code == 200: 
         print("Successfully received PWA response")
         activeUserConfirmation = result["confirmed"]
+        # TODO: need confirm API to return location of fire alarm that was confirmed
     else: 
         print("An error occured in confirming the fire status with the active user")
     print(result) 
@@ -46,15 +47,15 @@ def linkUserToAlarm():
         print("An error occurred in linking")
     print(str(response))
 
-def addAlarmToDB(alarmSerial):
-    # TODO: Add sqlite db adding alarm to DB
-    print("adding alarm to the PWA database")
-    # Send API request to PWA to add a fire alarm to the DB with alarmSerial = alarmSerial
+# def addAlarmToDB(alarmSerial):
+#     print("adding alarm to the PWA database")
+#     # Send API request to PWA to add a fire alarm to the DB with alarmSerial = alarmSerial
     
-    response = "{response}"
-    return response
+#     response = "{response}"
+#     return response
 
 def notifyPassiveUser(alarmID, msg):
+    # TODO: need API to notify all passive users
     pass
 
 

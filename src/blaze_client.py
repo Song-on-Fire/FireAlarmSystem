@@ -25,6 +25,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     topic = msg.topic
     if mqtt.topic_matches_sub(utils._FIRE_ALARM_ER_TOPIC, topic):
+        utils.setMsgLogTime()
         m_cntr.handleERMessage(client, msg)
     elif mqtt.topic_matches_sub(utils._SETUP_ALARM_TOPIC, topic):
         m_cntr.handleSetupMessage(client, msg)

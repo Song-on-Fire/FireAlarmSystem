@@ -6,6 +6,8 @@ import pwa_controller as p_cntr
 import sqlite3
 import time
 from datetime import datetime
+import os
+import csv
 
 def execute_query_with_retry(conn, query:str, values = None, requires_commit=False, max_retries=3, delay = 0.1, executeMany = False ):
     for i in range(max_retries):
@@ -85,6 +87,7 @@ def handleSetupMessage(client,msg):
 
     # if payload['key'] != consts.ALARM_KEY:
     #     disconnectSetup()
+    
     msgList = payload.split(",") # expect [alarmSerial, username, password]
 
     if len(msgList) != 3:
@@ -112,18 +115,25 @@ def handleERMessage(client, msg):
     payload = msg.payload.decode()
     logMessage(topic, payload)
 
-
     # the fire alarm username/id is appended to the topic
     alarmSerial = topic[(topic.rindex("/") + 1): ]
 
     # get confirmation from PWA, this will send the push notification 
     activeUserConfirmation = p_cntr.getActiveUserConfirmation(alarmID = alarmSerial)
     # alarmID will be stored in topics, username in topic will become deprecated feature
-
+    utils.setResponseLogTime()
     if (activeUserConfirmation is None) or activeUserConfirmation:
         # if the active user does not respond, notify all alarms with the topic /response/<alarmSerial> 
-        # payload = "1"
         sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
     elif not activeUserConfirmation: 
         sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "0")
+    writeToLog(location = "exampleLocation", response = activeUserConfirmation)
 
+def writeToLog(location, response = None):
+    utils = ConfigUtils()
+    departmentLogPath = os.path.join(utils._ROOT_DIR, "departmentLog/alarmsLog.csv")
+    data = [utils._receive_msg, utils._receive_response, location]
+    if response:
+        data.append(response)
+    else:
+        data.append("NA")

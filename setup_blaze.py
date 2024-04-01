@@ -38,7 +38,7 @@ def writeProjectFilePaths():
         utils._config.add_section("PATHS")
 
     utils._config.set("PATHS", "root_dir", ROOT_DIR)
-    utils._config.set("PATHS", "mosquitto_config_file", os.path.join(ROOT_DIR, "broker/blaze_mosquitto_utils._config.conf"))
+    utils._config.set("PATHS", "mosquitto_config_file", os.path.join(ROOT_DIR, "broker/blaze_mosquitto_config.conf"))
 
     with open(CONFIG_FILE_PATH, 'w') as config_file:
         utils._config.write(config_file)
@@ -56,7 +56,7 @@ def getMosquittoConfig():
 
 def createMosquittoConfiguration(config_dict):
     line_content = ""
-    blaze_mosquitto_config_location = os.path.join(ROOT_DIR, "broker/blaze_mosquitto_utils._config.conf")
+    blaze_mosquitto_config_location = os.path.join(ROOT_DIR, "broker/blaze_mosquitto_config.conf")
     with open(blaze_mosquitto_config_location, 'w') as file:
         for key,value in config_dict.items():
             line_content = f"{key} {value}\n"

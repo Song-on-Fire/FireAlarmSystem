@@ -11,3 +11,4 @@ src/__pycache__/pwa_controller.cpython-310.pyc
 broker/logs/blaze_mosquitto.log
 src/__pycache__/constants.cpython-310.pyc
 broker/blaze_mosquitto_config.conf
+broker/blaze_mosquitto_config.conf
