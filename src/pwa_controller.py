@@ -2,6 +2,7 @@ import requests
 from constants import ConfigUtils
 import random 
 import string
+import time
 
 utils = ConfigUtils()
 
@@ -21,22 +22,25 @@ def notifyActiveUser(alarmID, msgPayload):
         print("User not found in Users/Subscriptions")
     print(str(response))
         
+
 def getActiveUserConfirmation(alarmID):
-    activeUserConfirmation = None
+    utils = ConfigUtils()
+    activeUserConfirmation = dict()
     parameters = {
+        "&timestamp": time.mktime(utils._receive_msg_time.timetuple()),
         "alarmId": alarmID # 
     }
     response = requests.get(utils._PWA_CONFIRM_URL, params = parameters) # /confirm 
     result = response.json()
     if response.status_code == 200: 
         print("Successfully received PWA response")
-        activeUserConfirmation = result["confirmed"]
-        # TODO: need confirm API to return location of fire alarm that was confirmed
+        activeUserConfirmation["confirmed"] = result["confirmed"]
+        activeUserConfirmation["location"] = result["location"]
     else: 
         print("An error occured in confirming the fire status with the active user")
     print(result) 
-    if activeUserConfirmation == 'null':
-        activeUserConfirmation = None
+    if activeUserConfirmation["confirmed"] == 'null':
+        activeUserConfirmation["confirmed"] = None
     return activeUserConfirmation
 
 def linkUserToAlarm():
@@ -54,8 +58,22 @@ def linkUserToAlarm():
 #     response = "{response}"
 #     return response
 
-def notifyPassiveUser(alarmID, msg):
+def notifyPassiveUser(alarmLocation):
     # TODO: need API to notify all passive users
-    pass
+    msg = f"Fire located at {alarmLocation}"
+    requestBody = {
+        "&timestamp": time.mktime(utils._receive_msg_time.timetuple()),
+        "notification": {
+            "title": "Fire Detected!",
+            "message": msg
+        }
+    }
+    response = requests.post(utils._PWA_NOTIFY_URL, params = requestBody) # /confirm 
+    result = response.json()
+    if response.status_code == 200: 
+        print("response code 200")
+    else: 
+        print("An error occured in sending the push notification")
+    print(response)
 
 

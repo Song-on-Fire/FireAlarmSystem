@@ -66,19 +66,18 @@ def disconnectSetup():
 # TODO: add function to open sqlite database, insert a new row into alarms, commit
 def addAlarmToDB(alarmSerial):
     connection = sqlite3.connect("/home/devnico/repos/senior-design/FireAlarmApp/db.sqlite")
-    insertQuery = '''INSERT INTO alarms (alarmSerial, createdAt, updatedAt) VALUES (?,?,?)'''
+    insertQuery = '''INSERT INTO alarms (alarmSerial, location, createdAt, updatedAt) VALUES (?,?,?,?)'''
     selectQuery = '''SELECT * FROM alarms WHERE alarmSerial = ?'''
     # check if alarmSerial already exists in DB
     if execute_query_with_retry(conn=connection, query=selectQuery, values=(alarmSerial,)):
         # if rows are returned, return success (True)
         return None
     else:
-        execute_query_with_retry(conn=connection,query=insertQuery, values=(alarmSerial,datetime.now(), datetime.now()), requires_commit=True)
+        execute_query_with_retry(conn=connection,query=insertQuery, values=(alarmSerial,"unknown", datetime.now(), datetime.now()), requires_commit=True)
         return True
     #
     #  else
         # run Insert query
-    pass
 
 def handleSetupMessage(client,msg):
     topic = msg.topic
@@ -114,6 +113,7 @@ def handleERMessage(client, msg):
     topic = msg.topic
     payload = msg.payload.decode()
     logMessage(topic, payload)
+    event = str()
 
     # the fire alarm username/id is appended to the topic
     alarmSerial = topic[(topic.rindex("/") + 1): ]
@@ -122,18 +122,23 @@ def handleERMessage(client, msg):
     activeUserConfirmation = p_cntr.getActiveUserConfirmation(alarmID = alarmSerial)
     # alarmID will be stored in topics, username in topic will become deprecated feature
     utils.setResponseLogTime()
-    if (activeUserConfirmation is None) or activeUserConfirmation:
+    if (activeUserConfirmation["confirmed"] is None) or activeUserConfirmation["confirmed"] == True:
         # if the active user does not respond, notify all alarms with the topic /response/<alarmSerial> 
         sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
+        # Notify all passive users
+        p_cntr.notifyPassiveUser(activeUserConfirmation)
+        event = "True Alarm.All Users Notified"
     elif not activeUserConfirmation: 
         sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "0")
-    writeToLog(location = "exampleLocation", response = activeUserConfirmation)
+        event = "False Alarm"
+    writeToLog(location = activeUserConfirmation["location"], response = event)
 
-def writeToLog(location, response = None):
+def writeToLog(location, response):
     utils = ConfigUtils()
     departmentLogPath = os.path.join(utils._ROOT_DIR, "departmentLog/alarmsLog.csv")
-    data = [utils._receive_msg, utils._receive_response, location]
-    if response:
-        data.append(response)
-    else:
-        data.append("NA")
+    data = [utils._receive_msg_time, location, utils._receive_response_time, response]
+    with open(departmentLogPath, 'a', newline='') as file:
+        writer = csv.writer(file)
+        # Append the data to the csv file
+        writer.writerow(data)
+    

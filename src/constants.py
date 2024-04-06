@@ -44,8 +44,8 @@ class ConfigUtils:
             print(f"Error with reloading mosquitto config file: {e}")
         
     def setMsgLogTime(self):
-        self._receive_msg = datetime.now()
+        self._receive_msg_time = datetime.now()
     
     def setResponseLogTime(self):
-        self._receive_response = datetime.now()
+        self._receive_response_time = datetime.now()
 
