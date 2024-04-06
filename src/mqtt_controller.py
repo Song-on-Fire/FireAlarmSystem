@@ -32,7 +32,6 @@ def execute_query_with_retry(conn, query:str, values = None, requires_commit=Fal
             else:
                 raise
     raise sqlite3.OperationalError("Max retries exceeded. Unable to execute query.")
-    conn.close()
 
 def subscribeToTopics(topics: tuple, client):
     for topic in topics:
@@ -50,10 +49,11 @@ def addUsernamePassword(username, password):
     utils = ConfigUtils()
     try:
         subprocess.run(['mosquitto_passwd', '-b', utils._BROKER_PASSWD, username, password], check=True)
-        utils.reloadConfigFile()
+        utils.reloadConfigFileaddAlarm()
         return True
     except subprocess.CalledProcessError as e:
         print(f"Error from adding {username},{password} to {utils._BROKER_PASSWD}: {e}")
+    return None
 
 def disconnectSetup():
     utils = ConfigUtils()
@@ -63,21 +63,34 @@ def disconnectSetup():
     tempClient.disconnect()
     print("Disconnecting unauthorized client")
 
-# TODO: add function to open sqlite database, insert a new row into alarms, commit
 def addAlarmToDB(alarmSerial):
-    connection = sqlite3.connect("/home/devnico/repos/senior-design/FireAlarmApp/db.sqlite")
+    # change this path for where the sqlite db is located in the projectserver
+    connection = sqlite3.connect("/home/larnell/Blaze-PWA/BlazeFrontEnd/FireAlarmApp/db.sqlite")
     insertQuery = '''INSERT INTO alarms (alarmSerial, location, createdAt, updatedAt) VALUES (?,?,?,?)'''
     selectQuery = '''SELECT * FROM alarms WHERE alarmSerial = ?'''
     # check if alarmSerial already exists in DB
     if execute_query_with_retry(conn=connection, query=selectQuery, values=(alarmSerial,)):
         # if rows are returned, return success (True)
+        connection.close()
         return None
     else:
         execute_query_with_retry(conn=connection,query=insertQuery, values=(alarmSerial,"unknown", datetime.now(), datetime.now()), requires_commit=True)
+        connection.close()
         return True
     #
     #  else
         # run Insert query
+
+def getAllAlarmsInDB():
+    selectQuery = '''SELECT alarmSerial FROM alarms'''
+    connection = sqlite3.connect("/home/larnell/Blaze-PWA/BlazeFrontEnd/FireAlarmApp/db.sqlite")
+    alarm_rows = execute_query_with_retry(conn=connection, query=selectQuery)
+    return alarm_rows
+
+def sendMessageToAlarms(client, allAlarms, topic, message):
+    for alarmSerial in allAlarms:
+        sendMessage(client, topic+alarmSerial, message)
+
 
 def handleSetupMessage(client,msg):
     topic = msg.topic
@@ -124,11 +137,14 @@ def handleERMessage(client, msg):
     utils.setResponseLogTime()
     if (activeUserConfirmation["confirmed"] is None) or activeUserConfirmation["confirmed"] == True:
         # if the active user does not respond, notify all alarms with the topic /response/<alarmSerial> 
-        sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
+        allAlarms = getAllAlarmsInDB()
+        sendMessageToAlarms(client, allAlarms, utils._CONTROLLER_RESPONSE_TOPIC + "/", message = "1")
+        #sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
         # Notify all passive users
         p_cntr.notifyPassiveUser(activeUserConfirmation)
         event = "True Alarm.All Users Notified"
-    elif not activeUserConfirmation: 
+    else: 
+
         sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "0")
         event = "False Alarm"
     writeToLog(location = activeUserConfirmation["location"], response = event)
