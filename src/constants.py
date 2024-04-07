@@ -26,16 +26,20 @@ class ConfigUtils:
         self._PWA_CONFIRM_URL = self._config.get("PWA", "confirm_url")
         self._PWA_ADD_ALARM_URL = self._config.get("PWA", "add_alarm_url") 
         self._HOST = self._config.get("PWA", "host")
-        
+
         # Credentials
         #self._ALARM_KEY = self._config.get("KEYS", "alarm_key")
         self._CLIENT_USERNAME = self._config.get("KEYS", "client_username")
         self._CLIENT_PASSWORD = self._config.get("KEYS", "client_password")
+        self._AUTH_TOKEN = self._config.get("KEYS", "auth_token")
 
         # Important Paths
         self._BROKER_PID_FILEPATH = self._config.get("MOSQUITTO", "pid_file")
         self._BROKER_PASSWD = self._config.get("MOSQUITTO", "password_file")
         self._ROOT_DIR = self._config.get("PATHS", "root_dir")
+
+        # Broker IP
+        self._BROKER_IP = self._config.get("MOSQUITTO", "bind_address")
     
     def reloadConfigFile(self):
         try:

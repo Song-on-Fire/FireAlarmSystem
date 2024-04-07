@@ -65,14 +65,16 @@ def createMosquittoConfiguration(config_dict):
 def startMosquittoService():
     command = "mosquitto -v -d -c " + utils._config.get("PATHS", "mosquitto_config_file")
     try:
-        print(command)
+        #print(command)
         subprocess.run(command, shell=True, check=True)
+        print("running mosquitto")
     except subprocess.CalledProcessError as e:
         print(f"Error with reading {CONFIG_FILE_PATH}: {e}")
     
 def mosquitto_is_running():
     try: 
-        result = subprocess.run(['systemctl', 'is-active', 'mosquitto'], check=True, capture_output=True, text=True)
+        result = subprocess.run(['systemctl', 'is-active', 'mosquitto'], check=True, shell=True, capture_output=True, text=True)
+        print(result)
         if result == "active":
             print("mosquitto is already running")
             return True
@@ -91,6 +93,8 @@ def main():
     writeMosquittoFilePaths()
     # Set up programatic constants
     utils.setUpConfigFileVars(file_path=CONFIG_FILE_PATH)
+    print(utils._CLIENT_USERNAME)
+    print(utils._CLIENT_PASSWORD)
     # get all mosquitto configurations
     MOSQUITTO_CONFIG = getMosquittoConfig()
     # write them to blaze mosquitto conf file

@@ -3,35 +3,11 @@ import paho.mqtt.publish as publish #publish dependency
 from constants import ConfigUtils
 import subprocess
 import pwa_controller as p_cntr
-import sqlite3
-import time
-from datetime import datetime
+import db_controller as db_cntr
 import os
 import csv
 
-def execute_query_with_retry(conn, query:str, values = None, requires_commit=False, max_retries=3, delay = 0.1, executeMany = False ):
-    for i in range(max_retries):
-        try: 
-            cursor = conn.cursor()
-            if values and executeMany:
-                cursor.executemany(query, values)
-            elif values:
-                print(values)
-                print(query)
-                cursor.execute(query, values)
-            else:
-                cursor.execute(query)
-            if requires_commit:
-                conn.commit()
-            return cursor.fetchall() # if the command does not return rows, then empty list is returned
-        except sqlite3.OperationalError as err:
-            if "database is locked" in str(err):
-                print(f"Database is locked. Retrying in {delay} seconds...")
-                time.sleep(delay)
-                continue
-            else:
-                raise
-    raise sqlite3.OperationalError("Max retries exceeded. Unable to execute query.")
+utils = ConfigUtils()
 
 def subscribeToTopics(topics: tuple, client):
     for topic in topics:
@@ -46,46 +22,21 @@ def sendMessage(client, topic, message):
     client.publish(topic, payload = message)
 
 def addUsernamePassword(username, password):
-    utils = ConfigUtils()
     try:
         subprocess.run(['mosquitto_passwd', '-b', utils._BROKER_PASSWD, username, password], check=True)
-        utils.reloadConfigFileaddAlarm()
+        utils.reloadConfigFilea()
         return True
     except subprocess.CalledProcessError as e:
         print(f"Error from adding {username},{password} to {utils._BROKER_PASSWD}: {e}")
     return None
 
 def disconnectSetup():
-    utils = ConfigUtils()
     tempClient = mqtt.Client()
     tempClient.username_pw_set(username="default", password="blaze")
     tempClient.connect(utils._HOST, 1883)
     tempClient.disconnect()
     print("Disconnecting unauthorized client")
 
-def addAlarmToDB(alarmSerial):
-    # change this path for where the sqlite db is located in the projectserver
-    connection = sqlite3.connect("/home/larnell/Blaze-PWA/BlazeFrontEnd/FireAlarmApp/db.sqlite")
-    insertQuery = '''INSERT INTO alarms (alarmSerial, location, createdAt, updatedAt) VALUES (?,?,?,?)'''
-    selectQuery = '''SELECT * FROM alarms WHERE alarmSerial = ?'''
-    # check if alarmSerial already exists in DB
-    if execute_query_with_retry(conn=connection, query=selectQuery, values=(alarmSerial,)):
-        # if rows are returned, return success (True)
-        connection.close()
-        return None
-    else:
-        execute_query_with_retry(conn=connection,query=insertQuery, values=(alarmSerial,"unknown", datetime.now(), datetime.now()), requires_commit=True)
-        connection.close()
-        return True
-    #
-    #  else
-        # run Insert query
-
-def getAllAlarmsInDB():
-    selectQuery = '''SELECT alarmSerial FROM alarms'''
-    connection = sqlite3.connect("/home/larnell/Blaze-PWA/BlazeFrontEnd/FireAlarmApp/db.sqlite")
-    alarm_rows = execute_query_with_retry(conn=connection, query=selectQuery)
-    return alarm_rows
 
 def sendMessageToAlarms(client, allAlarms, topic, message):
     for alarmSerial in allAlarms:
@@ -112,7 +63,7 @@ def handleSetupMessage(client,msg):
             # if(not response):
             #     print("Error")
             # print(response)
-            if addAlarmToDB(msgList[0]):
+            if db_cntr.addAlarmToDB(msgList[0]):
                 print(f"alarm serial {msgList[0]}added to DB")
             else:
                 print("alarm already exists in DB")
@@ -121,7 +72,6 @@ def handleSetupMessage(client,msg):
 
             
 def handleERMessage(client, msg):
-    utils = ConfigUtils()
     # extract topic and payload from message
     topic = msg.topic
     payload = msg.payload.decode()
@@ -137,7 +87,7 @@ def handleERMessage(client, msg):
     utils.setResponseLogTime()
     if (activeUserConfirmation["confirmed"] is None) or activeUserConfirmation["confirmed"] == True:
         # if the active user does not respond, notify all alarms with the topic /response/<alarmSerial> 
-        allAlarms = getAllAlarmsInDB()
+        allAlarms = db_cntr.getAllAlarmsInDB()
         sendMessageToAlarms(client, allAlarms, utils._CONTROLLER_RESPONSE_TOPIC + "/", message = "1")
         #sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
         # Notify all passive users

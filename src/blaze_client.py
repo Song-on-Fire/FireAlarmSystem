@@ -5,12 +5,14 @@ from constants import ConfigUtils
 import configparser
 import mqtt_controller as m_cntr
 
-utils = ConfigUtils()
+utils = ConfigUtils()._instance
 # BROKER_HOST = "mqtt.eclipseprojects.io"
 
 # The callback for when the client receives a CONNACK response from the broker.
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
+    print(userdata)
+    print(utils._CLIENT_USERNAME, utils._CLIENT_PASSWORD)
     if(rc == 5):
         print("Authentication Error on Broker")
         exit()
@@ -40,7 +42,7 @@ def run_client():
     # Set username and password 
     client.username_pw_set(username=utils._CLIENT_USERNAME, password=utils._CLIENT_PASSWORD )
     # Connect client to the Broker 
-    client.connect(utils._HOST, 1883)
+    client.connect(utils._BROKER_IP, 1883)
 
     # Run cliet forever
     while True:
