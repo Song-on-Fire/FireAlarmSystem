@@ -1,13 +1,7 @@
-import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish #publish dependency
-from constants import ConfigUtils
-import subprocess
 import pwa_controller as p_cntr
 import sqlite3
 import time
 from datetime import datetime
-import os
-import csv
 
 def execute_query_with_retry(conn, query:str, values = None, requires_commit=False, max_retries=3, delay = 0.1, executeMany = False ):
     for i in range(max_retries):

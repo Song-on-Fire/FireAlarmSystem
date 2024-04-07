@@ -1,12 +1,8 @@
 import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish #publish dependency
-import requests # to send API request to PWA
 from constants import ConfigUtils
-import configparser
 import mqtt_controller as m_cntr
 
 utils = ConfigUtils()._instance
-# BROKER_HOST = "mqtt.eclipseprojects.io"
 
 # The callback for when the client receives a CONNACK response from the broker.
 def on_connect(client, userdata, flags, rc):

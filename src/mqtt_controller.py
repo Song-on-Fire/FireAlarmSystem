@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish #publish dependency
 from constants import ConfigUtils
 import subprocess
 import pwa_controller as p_cntr
@@ -47,9 +46,6 @@ def handleSetupMessage(client,msg):
     topic = msg.topic
     payload = msg.payload.decode()
     logMessage(topic, payload)
-
-    # if payload['key'] != consts.ALARM_KEY:
-    #     disconnectSetup()
     
     msgList = payload.split(",") # expect [alarmSerial, username, password]
 
@@ -58,13 +54,8 @@ def handleSetupMessage(client,msg):
         disconnectSetup()
     else:
         if addUsernamePassword(username = msgList[1], password = msgList[2]):
-            # if adding the username, password come backs good, then add alarmSerial to DB
-            # response = p_cntr.addAlarmToDB(alarmSerial=payload)
-            # if(not response):
-            #     print("Error")
-            # print(response)
             if db_cntr.addAlarmToDB(msgList[0]):
-                print(f"alarm serial {msgList[0]}added to DB")
+                print(f"alarm serial {msgList[0]} added to DB")
             else:
                 print("alarm already exists in DB")
         else:
@@ -85,22 +76,20 @@ def handleERMessage(client, msg):
     activeUserConfirmation = p_cntr.getActiveUserConfirmation(alarmID = alarmSerial)
     # alarmID will be stored in topics, username in topic will become deprecated feature
     utils.setResponseLogTime()
+
     if (activeUserConfirmation["confirmed"] is None) or activeUserConfirmation["confirmed"] == True:
         # if the active user does not respond, notify all alarms with the topic /response/<alarmSerial> 
         allAlarms = db_cntr.getAllAlarmsInDB()
         sendMessageToAlarms(client, allAlarms, utils._CONTROLLER_RESPONSE_TOPIC + "/", message = "1")
-        #sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "1")
         # Notify all passive users
         p_cntr.notifyPassiveUser(activeUserConfirmation)
         event = "True Alarm.All Users Notified"
     else: 
-
         sendMessage(client, utils._CONTROLLER_RESPONSE_TOPIC + "/" + alarmSerial, message = "0")
         event = "False Alarm"
     writeToLog(location = activeUserConfirmation["location"], response = event)
 
 def writeToLog(location, response):
-    utils = ConfigUtils()
     departmentLogPath = os.path.join(utils._ROOT_DIR, "departmentLog/alarmsLog.csv")
     data = [utils._receive_msg_time, location, utils._receive_response_time, response]
     with open(departmentLogPath, 'a', newline='') as file:
